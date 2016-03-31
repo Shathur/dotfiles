@@ -1,0 +1,150 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Bundle 'nathanalderson/yang.vim'
+Plugin 'bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'joshdick/onedark.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'matze/vim-move'
+"Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+"Plugin 'kana/vim-metarw'
+"Plugin 'mattn/vim-metarw-gdrive'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+set number
+set ruler
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set autoindent smartindent
+set hidden
+set incsearch
+set ignorecase smartcase
+
+syntax on
+autocmd FileType yang setlocal shiftwidth=2 tabstop=2
+
+if has ("autocmd")
+    autocmd vimenter * NERDTree | wincmd p
+    "autocmd vimenter * nested : TagbarOpen
+    " au BufNewFile,BufRead * if &ft == '' | set ft=txt | endif
+    " autocmd BufWritePost * !ctags -R
+endif
+
+colorscheme onedark
+
+let mapleader=" "
+
+map <C-n> :NERDTreeTabsToggle<CR>
+map <F2> :e $MYVIMRC<CR>
+
+" replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+"Remove all trailing whitespace by pressing F7
+nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+" enable airline tabs
+let g:airline#extensions#tabline#enabled = 1
+
+" only show file name
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" show their index (not necessarily the same as buffer number)
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>h <Plug>AirlineSelectPrevTab
+nmap <leader>l <Plug>AirlineSelectNextTab
+
+" To open a new empty buffer
+nmap <leader>t :enew<cr>
+nmap <leader>T :new<cr>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>q :bp <BAR> bd #<CR>
+
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_autopreview = 1
+
+" highlight current word, sort of
+map <F3> :set hlsearch!<CR>
+
+" disable Ex mode
+nnoremap Q <nop>
+
+nnoremap <leader>u :update<CR>
+
+" toggle vertical bar at 80 chars
+function! g:ToggleColorColumn()
+    if &colorcolumn != ''
+        setlocal colorcolumn&
+    else
+        setlocal colorcolumn=80
+    endif
+endfunction
+
+nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
+
+nnoremap <silent> <F4> :!ctags -R<CR>:redraw!<CR>
+nnoremap <silent> <F5> :!rm -f tags<CR>:redraw!<CR>
+
+" Save file as sudo
+cabbrev W! %!sudo tee > /dev/null %
+
+"let g:delimitMate_expand_cr = 2
+
+let g:move_map_keys = 0
+
+vmap <C-j> <Plug>MoveBlockDown
+vmap <C-k> <Plug>MoveBlockUp
+nmap <C-j> <Plug>MoveLineDown
+nmap <C-k> <Plug>MoveLineUp
+
+nmap <leader>x A;<Esc>
+
+let g:ctrlp_working_path_mode = '0'
+
+map <F9> :Gst<CR>
+
+nmap <F10> :set paste!<CR>
