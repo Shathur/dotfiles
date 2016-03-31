@@ -129,9 +129,6 @@ nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 nnoremap <silent> <F4> :!ctags -R<CR>:redraw!<CR>
 nnoremap <silent> <F5> :!rm -f tags<CR>:redraw!<CR>
 
-" Save file as sudo
-cabbrev W! %!sudo tee > /dev/null %
-
 "let g:delimitMate_expand_cr = 2
 
 let g:move_map_keys = 0
