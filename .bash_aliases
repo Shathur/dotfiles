@@ -5,5 +5,6 @@ function cdl { cd $1; ls;}
 alias lt='ls -lt'
 alias sub='cd ~/stash/unix-bind/src'
 alias eub='cd ~/ncs-envs/unix-bind/ && ncs -c ncs.conf && ncs_cli -u admin'
-alias ncli='ncs_cli -u admin'
+alias nclij='ncs_cli -u admin'
+alias ncli='nclij -C'
 alias nenv='make env.sh && . env.sh'
