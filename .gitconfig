@@ -1,0 +1,9 @@
+[user]
+	email = elnystro@cisco.com
+	name = Elias Nyström
+[core]
+	editor = vim
+[push]
+	default = simple
+[alias]
+    edit = !$EDITOR $(git diff --name-only)

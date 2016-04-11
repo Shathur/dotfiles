@@ -122,5 +122,6 @@ export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
 export DEV_SUPPORT_HOME="/home/elnystro/dev-support"
 export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:$JAVA_HOME/bin:$HOME/idea-IC-145.258.11/bin"
 export HISTTIMEFORMAT="%d/%m/%y %T "
+export EDITOR="vim"
 
 eval "$BASH_POST_RC"
