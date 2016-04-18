@@ -12,7 +12,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'nathanalderson/yang.vim'
 Plugin 'bling/vim-airline'
+Plugin 'brookhong/cscope.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'haya14busa/incsearch.vim'
+Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'majutsushi/tagbar'
@@ -23,9 +27,12 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'xolox/vim-easytags'
+Plugin 'xolox/vim-misc'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 "Plugin 'kana/vim-metarw'
 "Plugin 'mattn/vim-metarw-gdrive'
@@ -58,9 +65,8 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2
 
 if has ("autocmd")
     autocmd vimenter * NERDTree | wincmd p
-    "autocmd vimenter * nested : TagbarOpen
     " au BufNewFile,BufRead * if &ft == '' | set ft=txt | endif
-    " autocmd BufWritePost * !ctags -R
+    "autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 endif
 
 colorscheme onedark
@@ -71,7 +77,7 @@ map <C-n> :NERDTreeTabsToggle<CR>
 map <F2> :e $MYVIMRC<CR>
 
 " replace word under cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 
 "Remove all trailing whitespace by pressing F7
 nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -126,9 +132,6 @@ endfunction
 
 nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
-nnoremap <silent> <F4> :!ctags -R<CR>:redraw!<CR>
-nnoremap <silent> <F5> :!rm -f tags<CR>:redraw!<CR>
-
 "let g:delimitMate_expand_cr = 2
 
 let g:move_map_keys = 0
@@ -145,3 +148,49 @@ let g:ctrlp_working_path_mode = '0'
 map <F9> :Gst<CR>
 
 nmap <F10> :set paste!<CR>
+
+"cscope
+nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
+let g:cscope_silent = 1
+
+"EasyMotion
+let g:EasyMotion_do_mapping = 0
+nmap <leader><leader>f <Plug>(easymotion-overwin-f)
+nmap <leader><leader>F <Plug>(easymotion-overwin-f2)
+nmap <leader><leader>l <Plug>(easymotion-overwin-line)
+nmap <leader><leader>w <Plug>(easymotion-overwin-w)
+
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_keys = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+let g:EasyMotion_prompt = '{n}> '
+
+map  <leader>/ <Plug>(easymotion-sn)
+omap <leader>/ <Plug>(easymotion-tn)
+
+"Incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+"Incsearch fuzzy
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
+map <F4> :UpdateTags<CR>
+map <F5> :HighlightTags<CR>
+
+set cpoptions+="d"
+set tags=./tags
+let g:easytags_dynamic_files = 2

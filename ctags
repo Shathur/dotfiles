@@ -1,0 +1,6 @@
+#--recurse=yes
+--exclude=.git
+--exclude=packages/*
+--exclude=ncs-out/*
+--exclude=build/*
+--exclude=log/*

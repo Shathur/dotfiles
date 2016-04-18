@@ -6,4 +6,4 @@
 [push]
 	default = simple
 [alias]
-    edit = !$EDITOR $(git diff --name-only)
+    edit = !$EDITOR $(git status --short | cut -d' ' -f3)
