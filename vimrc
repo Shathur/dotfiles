@@ -11,10 +11,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'nathanalderson/yang.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -65,7 +67,7 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2
 
 if has ("autocmd")
     autocmd vimenter * NERDTree | wincmd p
-    " au BufNewFile,BufRead * if &ft == '' | set ft=txt | endif
+     au BufNewFile,BufRead * if &ft == '' | set ft=txt | endif
     "autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
 endif
 
@@ -111,10 +113,6 @@ nmap <leader>T :new<cr>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 nmap <F8> :TagbarToggle<CR>
-let g:tagbar_autopreview = 1
-
-" highlight current word, sort of
-map <F3> :set hlsearch!<CR>
 
 " disable Ex mode
 nnoremap Q <nop>
