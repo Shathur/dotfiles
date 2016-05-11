@@ -16,6 +16,7 @@ Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'edsono/vim-matchit'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
@@ -76,7 +77,7 @@ colorscheme onedark
 let mapleader=" "
 
 map <C-n> :NERDTreeTabsToggle<CR>
-map <F2> :e $MYVIMRC<CR>
+map <F2> :e ~/stash/dotfiles/vimrc<CR>
 
 " replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
@@ -192,3 +193,5 @@ map <F5> :HighlightTags<CR>
 set cpoptions+="d"
 set tags=./tags
 let g:easytags_dynamic_files = 2
+
+map <F3> :set hlsearch!<CR>
