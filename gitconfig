@@ -1,9 +1,16 @@
 [user]
-	email = elnystro@cisco.com
-	name = Elias Nyström
+    email = elnystro@cisco.com
+    name = Elias Nyström
 [core]
-	editor = vim
+    editor = vim
 [push]
-	default = simple
+    default = simple
 [alias]
     edit = !$EDITOR $(git status --short | cut -d' ' -f3)
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
