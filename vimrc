@@ -69,8 +69,7 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2
 
 if has ("autocmd")
     autocmd vimenter * NERDTree | wincmd p
-     au BufNewFile,BufRead * if &ft == '' | set ft=txt | endif
-    "autocmd BufEnter * if &filetype == "" | setlocal ft=text | endif
+    "autocmd BufNewFile * if &filetype == "" | set filetype=txt | endif
 endif
 
 colorscheme onedark
