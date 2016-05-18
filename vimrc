@@ -89,6 +89,8 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
 "Remove all trailing whitespace by pressing F7
 nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+set laststatus=2
+
 " enable airline tabs
 let g:airline#extensions#tabline#enabled = 1
 
