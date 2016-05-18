@@ -63,9 +63,11 @@ set autoindent smartindent
 set hidden
 set incsearch
 set ignorecase smartcase
+set showcmd
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 
 if has ("autocmd")
     autocmd vimenter * NERDTree | wincmd p
