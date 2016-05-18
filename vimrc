@@ -81,7 +81,7 @@ colorscheme onedark
 let mapleader=" "
 
 map <C-n> :NERDTreeTabsToggle<CR>
-map <F2> :e $MYVIMRC
+map <F2> :e $MYVIMRC<CR>
 
 " replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
