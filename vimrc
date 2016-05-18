@@ -70,8 +70,10 @@ autocmd FileType yang setlocal shiftwidth=2 tabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 
 if has ("autocmd")
-    autocmd vimenter * NERDTree | wincmd p
+    "autocmd vimenter * NERDTree | wincmd p
     "autocmd BufNewFile * if &filetype == "" | set filetype=txt | endif
+    autocmd FocusLost,InsertEnter   * set norelativenumber
+    autocmd FocusGained,InsertLeave * set relativenumber
 endif
 
 colorscheme onedark
