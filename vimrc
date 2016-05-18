@@ -12,8 +12,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'nathanalderson/yang.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'edsono/vim-matchit'
@@ -141,10 +143,15 @@ nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
 let g:move_map_keys = 0
 
-vmap <C-j> <Plug>MoveBlockDown
-vmap <C-k> <Plug>MoveBlockUp
-nmap <C-j> <Plug>MoveLineDown
-nmap <C-k> <Plug>MoveLineUp
+" vmap <C-j> <Plug>MoveBlockDown
+" vmap <C-k> <Plug>MoveBlockUp
+" nmap <C-j> <Plug>MoveLineDown
+" nmap <C-k> <Plug>MoveLineUp
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 nmap <leader>x A;<Esc>
 
