@@ -143,10 +143,10 @@ nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
 let g:move_map_keys = 0
 
-" vmap <C-j> <Plug>MoveBlockDown
-" vmap <C-k> <Plug>MoveBlockUp
-" nmap <C-j> <Plug>MoveLineDown
-" nmap <C-k> <Plug>MoveLineUp
+vmap <leader>j <Plug>MoveBlockDown
+vmap <leader>k <Plug>MoveBlockUp
+nmap <leader>k <Plug>MoveLineUp
+nmap <leader>j <Plug>MoveLineDown
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
