@@ -15,13 +15,14 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
-Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'edsono/vim-matchit'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
+Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'majutsushi/tagbar'
@@ -30,13 +31,17 @@ Plugin 'matze/vim-move'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/syntastic'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-utils/vim-man'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
@@ -143,15 +148,10 @@ nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
 let g:move_map_keys = 0
 
-vmap <leader>j <Plug>MoveBlockDown
-vmap <leader>k <Plug>MoveBlockUp
-nmap <leader>k <Plug>MoveLineUp
-nmap <leader>j <Plug>MoveLineDown
-
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+vmap <C-j> <Plug>MoveBlockDown
+vmap <C-k> <Plug>MoveBlockUp
+nmap <C-k> <Plug>MoveLineUp
+nmap <C-j> <Plug>MoveLineDown
 
 nmap <leader>x A;<Esc>
 
@@ -208,3 +208,7 @@ set tags=./tags
 let g:easytags_dynamic_files = 2
 
 map <F3> :set hlsearch!<CR>
+
+set t_ut=
+
+let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$ '', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
