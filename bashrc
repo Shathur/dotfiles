@@ -115,7 +115,7 @@ fi
 
 export TERM=xterm-256color
 
-source ~/ncs-releases/4.1.2.1/ncsrc
+source ~/ncs-releases/4.1.2/ncsrc
 PROMPT_DIRTRIM=1
 export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
 
@@ -123,5 +123,10 @@ export DEV_SUPPORT_HOME="/home/elnystro/dev-support"
 export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:$JAVA_HOME/bin:$HOME/idea-IC-145.258.11/bin"
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export EDITOR="vim"
+
+ncsrc() {
+    echo "~/ncs-releases/$1/ncsrc"
+    source ~/ncs-releases/$1/ncsrc
+}
 
 eval "$BASH_POST_RC"
