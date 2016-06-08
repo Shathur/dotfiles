@@ -11,10 +11,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'nathanalderson/yang.vim'
+Bundle 'wellle/targets.vim'
+
 Plugin 'airblade/vim-gitgutter'
+Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
+Plugin 'bruno-/vim-vertical-move'
 " Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
@@ -25,6 +29,7 @@ Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'majutsushi/tagbar'
 Plugin 'matze/vim-move'
 "Plugin 'Raimondi/delimitMate'
@@ -41,6 +46,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-utils/vim-g2'
+Plugin 'vim-utils/vim-interruptless'
+Plugin 'vim-utils/vim-line'
 Plugin 'vim-utils/vim-man'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
@@ -91,7 +99,7 @@ map <C-n> :NERDTreeTabsToggle<CR>
 map <F2> :e $MYVIMRC<CR>
 
 " replace word under cursor
-nnoremap <Leader>r :%s/\<<C-r><C-w>\>/
+nnoremap <Leader>R :%s/\<<C-r><C-w>\>/
 
 "Remove all trailing whitespace by pressing F7
 nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -144,14 +152,18 @@ endfunction
 
 nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
-"let g:delimitMate_expand_cr = 2
-
+" move lines
 let g:move_map_keys = 0
+vmap <leader>J <Plug>MoveBlockDown
+vmap <leader>K <Plug>MoveBlockUp
+nmap <leader>K <Plug>MoveLineUp
+nmap <leader>J <Plug>MoveLineDown
 
-vmap <C-j> <Plug>MoveBlockDown
-vmap <C-k> <Plug>MoveBlockUp
-nmap <C-k> <Plug>MoveLineUp
-nmap <C-j> <Plug>MoveLineDown
+" move between windows
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
 
 nmap <leader>x A;<Esc>
 
@@ -211,4 +223,47 @@ map <F3> :set hlsearch!<CR>
 
 set t_ut=
 
-let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''$ '', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
+map <leader>p :GitGutterPrevHunk<CR>
+map <leader>n :GitGutterNextHunk<CR>
+map <leader>r :GitGutterUndoHunk<CR>
+map <leader>s :GitGutterStageHunk<CR>
+
+" Follow symlinks when opening a file {{{
+
+" NOTE: this happens with directory symlinks anyway (due to Vim's chdir/getcwd
+"       magic when getting filenames).
+" Sources:
+"  - https://github.com/tpope/vim-fugitive/issues/147#issuecomment-7572351
+"  - http://www.reddit.com/r/vim/comments/yhsn6/is_it_possible_to_work_around_the_symlink_bug/c5w91qw
+function! MyFollowSymlink(...)
+	if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+		return
+	endif
+	let fname = a:0 ? a:1 : expand('%')
+	if fname =~ '^\w\+:/'
+		" Do not mess with 'fugitive://' etc.
+		return
+	endif
+	let fname = simplify(fname)
+
+	let resolvedfile = resolve(fname)
+	if resolvedfile == fname
+		return
+	endif
+	let resolvedfile = fnameescape(resolvedfile)
+	let sshm = &shm
+	set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
+	exec 'file ' . resolvedfile
+	let &shm=sshm
+
+	" Re-init fugitive.
+	call fugitive#detect(resolvedfile)
+	if &modifiable
+		" Only display a note when editing a file, especially not for `:help`.
+		redraw  " Redraw now, to avoid hit-enter prompt.
+		echomsg 'Resolved symlink: =>' resolvedfile
+	endif
+endfunction
+command! FollowSymlink call MyFollowSymlink()
+command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
+au BufReadPost * nested call MyFollowSymlink(expand('%'))
