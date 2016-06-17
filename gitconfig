@@ -9,6 +9,7 @@
     edit = !$EDITOR $(git status --short | cut -d' ' -f3)
     lo = log --graph --decorate --pretty=oneline --abbrev-commit
     loa = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    last = log --name-status HEAD^..HEAD
 [color]
     branch = auto
     diff = auto
@@ -22,3 +23,7 @@
 	added = green
 	changed = yellow
 	untracked = magenta
+[diff]
+    tool = meld
+[merge]
+    tool = meld
