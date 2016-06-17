@@ -19,7 +19,7 @@ Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
 Plugin 'brookhong/cscope.vim'
 Plugin 'bruno-/vim-vertical-move'
-" Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'edsono/vim-matchit'
@@ -36,6 +36,7 @@ Plugin 'matze/vim-move'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/syntastic'
+"Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'tpope/vim-commentary'
@@ -79,6 +80,8 @@ set hidden
 set incsearch
 set ignorecase smartcase
 set showcmd
+set nobackup
+set noswapfile
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2
@@ -236,33 +239,33 @@ map <leader>s :GitGutterStageHunk<CR>
 "  - https://github.com/tpope/vim-fugitive/issues/147#issuecomment-7572351
 "  - http://www.reddit.com/r/vim/comments/yhsn6/is_it_possible_to_work_around_the_symlink_bug/c5w91qw
 function! MyFollowSymlink(...)
-	if exists('w:no_resolve_symlink') && w:no_resolve_symlink
-		return
-	endif
-	let fname = a:0 ? a:1 : expand('%')
-	if fname =~ '^\w\+:/'
-		" Do not mess with 'fugitive://' etc.
-		return
-	endif
-	let fname = simplify(fname)
+    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+        return
+    endif
+    let fname = a:0 ? a:1 : expand('%')
+    if fname =~ '^\w\+:/'
+        " Do not mess with 'fugitive://' etc.
+        return
+    endif
+    let fname = simplify(fname)
 
-	let resolvedfile = resolve(fname)
-	if resolvedfile == fname
-		return
-	endif
-	let resolvedfile = fnameescape(resolvedfile)
-	let sshm = &shm
-	set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
-	exec 'file ' . resolvedfile
-	let &shm=sshm
+    let resolvedfile = resolve(fname)
+    if resolvedfile == fname
+        return
+    endif
+    let resolvedfile = fnameescape(resolvedfile)
+    let sshm = &shm
+    set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
+    exec 'file ' . resolvedfile
+    let &shm=sshm
 
-	" Re-init fugitive.
-	call fugitive#detect(resolvedfile)
-	if &modifiable
-		" Only display a note when editing a file, especially not for `:help`.
-		redraw  " Redraw now, to avoid hit-enter prompt.
-		echomsg 'Resolved symlink: =>' resolvedfile
-	endif
+    " Re-init fugitive.
+    call fugitive#detect(resolvedfile)
+    if &modifiable
+        " Only display a note when editing a file, especially not for `:help`.
+        redraw  " Redraw now, to avoid hit-enter prompt.
+        echomsg 'Resolved symlink: =>' resolvedfile
+    endif
 endfunction
 command! FollowSymlink call MyFollowSymlink()
 command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
