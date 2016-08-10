@@ -83,6 +83,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+DEFAULT_USER=elnystro
+
 export TERM=xterm-256color
 
-DEFAULT_USER=elnystro
+source ~/ncs-releases/4.2/ncsrc
+export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
+
+export DEV_SUPPORT_HOME="/home/elnystro/dev-support"
+export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:$JAVA_HOME/bin:$HOME/idea-IC-145.258.11/bin"
+export EDITOR="vim"
+
+ncsrc() {
+    echo "~/ncs-releases/$1/ncsrc"
+    source ~/ncs-releases/$1/ncsrc
+}
