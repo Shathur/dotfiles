@@ -98,3 +98,5 @@ ncsrc() {
     echo "~/ncs-releases/$1/ncsrc"
     source ~/ncs-releases/$1/ncsrc
 }
+
+RPROMPT=$(date +%H:%M)
