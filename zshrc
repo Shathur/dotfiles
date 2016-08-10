@@ -99,4 +99,8 @@ ncsrc() {
     source ~/ncs-releases/$1/ncsrc
 }
 
-RPROMPT=$(date +%H:%M)
+RPROMPT='[%D{%H:%M:%S}]'
+TMOUT=1
+TRAPALRM() {
+    zle reset-prompt
+}
