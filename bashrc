@@ -115,7 +115,7 @@ fi
 
 export TERM=xterm-256color
 
-source ~/ncs-releases/4.1.2/ncsrc
+source ~/ncs-releases/4.2/ncsrc
 PROMPT_DIRTRIM=1
 export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
 

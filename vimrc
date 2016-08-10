@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Bundle 'nathanalderson/yang.vim'
 Bundle 'wellle/targets.vim'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'benmills/vimux'
@@ -32,6 +33,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'majutsushi/tagbar'
 Plugin 'matze/vim-move'
+Plugin 'mbbill/undotree'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -48,6 +50,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-utils/vim-g2'
+Plugin 'vim-utils/vim-husk'
 Plugin 'vim-utils/vim-interruptless'
 Plugin 'vim-utils/vim-line'
 Plugin 'vim-utils/vim-man'
@@ -109,6 +112,8 @@ nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 set laststatus=2
 
+let g:airline_powerline_fonts = 1
+
 " enable airline tabs
 let g:airline#extensions#tabline#enabled = 1
 
@@ -126,8 +131,6 @@ nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>h <Plug>AirlineSelectPrevTab
-nmap <leader>l <Plug>AirlineSelectNextTab
 
 " To open a new empty buffer
 nmap <leader>t :enew<cr>
@@ -270,3 +273,9 @@ endfunction
 command! FollowSymlink call MyFollowSymlink()
 command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
 au BufReadPost * nested call MyFollowSymlink(expand('%'))
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap gz <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap gz <Plug>(EasyAlign)
