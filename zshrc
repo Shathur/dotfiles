@@ -98,3 +98,9 @@ ncsrc() {
     echo "~/ncs-releases/$1/ncsrc"
     source ~/ncs-releases/$1/ncsrc
 }
+
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
