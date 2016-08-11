@@ -1,5 +1,3 @@
-# vim:ft=zsh ts=2 sw=2 sts=2
-
 PROMPT='%{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ %{$fg_bold[red]%}%*%{$reset_color%} %{$fg[yellow]%}➤ %{$reset_color%} '
 
 # Must use Powerline font, for \uE0A0 to render.
