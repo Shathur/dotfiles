@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="elias"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -97,10 +97,4 @@ export EDITOR="vim"
 ncsrc() {
     echo "~/ncs-releases/$1/ncsrc"
     source ~/ncs-releases/$1/ncsrc
-}
-
-RPROMPT='[%D{%H:%M:%S}]'
-TMOUT=1
-TRAPALRM() {
-    zle reset-prompt
 }
