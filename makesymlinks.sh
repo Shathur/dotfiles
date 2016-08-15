@@ -8,7 +8,7 @@
 
 dir=~/stash/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc ctags gitconfig bash_aliases tmux.conf zshrc"
+files="bashrc vimrc ctags gitconfig bash_aliases tmux.conf vimperatorrc zshrc"
 
 ##########
 
