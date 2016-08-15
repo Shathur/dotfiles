@@ -49,7 +49,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo tmux)
+plugins=(git sudo tmux zsh-syntax-highlighting)
 
 # User configuration
 
@@ -92,7 +92,8 @@ alias eub='cd ~/ncs-envs/unix-bind/ && ncs -c ncs.conf && ncs_cli -u admin'
 alias nclij='ncs_cli -u admin'
 alias ncli='nclij -C'
 alias nenv='make env.sh && . env.sh'
-alias zshrc='source ~/.zshrc'
+alias .='source'
+alias zshrc='. ~/.zshrc'
 
 DEFAULT_USER=elnystro
 
