@@ -89,6 +89,7 @@ set ignorecase smartcase
 set showcmd
 set nobackup
 set noswapfile
+set formatoptions+=j
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2
