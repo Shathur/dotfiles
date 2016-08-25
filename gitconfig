@@ -3,6 +3,7 @@
     name = Elias Nyström
 [core]
     editor = vim
+	excludesfile = /home/elnystro/.gitignore_global
 [push]
     default = simple
 [alias]
