@@ -31,6 +31,7 @@ Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'justinmk/vim-sneak'
 Plugin 'majutsushi/tagbar'
 Plugin 'matze/vim-move'
 Plugin 'mbbill/undotree'
@@ -304,3 +305,5 @@ func! WordProcessorMode()
   setlocal linebreak 
 endfu 
 com! WP call WordProcessorMode()
+
+hi link SneakPluginTarget Cursor
