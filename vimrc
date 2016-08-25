@@ -120,6 +120,8 @@ set laststatus=2
 
 let g:airline_powerline_fonts = 1
 
+let g:airline#extensions#obsession#indicator_text = '✔'
+
 " enable airline tabs
 let g:airline#extensions#tabline#enabled = 1
 
