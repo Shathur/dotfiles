@@ -49,6 +49,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'vim-utils/vim-g2'
 Plugin 'vim-utils/vim-husk'
 Plugin 'vim-utils/vim-interruptless'
@@ -56,6 +57,7 @@ Plugin 'vim-utils/vim-line'
 Plugin 'vim-utils/vim-man'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 "Plugin 'kana/vim-metarw'
 "Plugin 'mattn/vim-metarw-gdrive'
@@ -89,6 +91,7 @@ set noswapfile
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
+autocmd Filetype notes WP
 
 if has ("autocmd")
     "autocmd vimenter * NERDTree | wincmd p
@@ -279,3 +282,20 @@ xmap gz <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gz <Plug>(EasyAlign)
+
+func! WordProcessorMode() 
+  setlocal formatoptions=1 
+  setlocal noexpandtab 
+  setlocal norelativenumber
+  nnoremap k gk
+  nnoremap j gj
+  nnoremap gk k
+  nnoremap gj j
+  setlocal spell spelllang=sv
+  " set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  set complete+=s
+  set formatprg=par
+  setlocal wrap 
+  setlocal linebreak 
+endfu 
+com! WP call WordProcessorMode()
