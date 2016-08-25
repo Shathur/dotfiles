@@ -122,6 +122,8 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#obsession#indicator_text = '✔'
+let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|asciidoc|notes'
 
 " enable airline tabs
 let g:airline#extensions#tabline#enabled = 1
