@@ -241,7 +241,7 @@ set cpoptions+="d"
 set tags=./tags
 let g:easytags_dynamic_files = 2
 
-map <F3> :set hlsearch!<CR>
+map <F3> :noh<CR>
 
 set t_ut=
 
