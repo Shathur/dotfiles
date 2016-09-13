@@ -24,7 +24,7 @@ Plugin 'bruno-/vim-vertical-move'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'edsono/vim-matchit'
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'jeetsukumaran/vim-indentwise'
@@ -35,6 +35,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'majutsushi/tagbar'
 Plugin 'matze/vim-move'
 Plugin 'mbbill/undotree'
+Plugin 'morhetz/gruvbox'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -52,6 +53,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
 Plugin 'vim-utils/vim-g2'
 Plugin 'vim-utils/vim-husk'
@@ -61,7 +63,7 @@ Plugin 'vim-utils/vim-man'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'dracula/vim'
 "Plugin 'kana/vim-metarw'
 "Plugin 'mattn/vim-metarw-gdrive'
 
@@ -91,6 +93,7 @@ set showcmd
 set nobackup
 set noswapfile
 set formatoptions+=j
+set cursorline
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2
@@ -104,7 +107,8 @@ if has ("autocmd")
     autocmd FocusGained,InsertLeave * set relativenumber
 endif
 
-colorscheme onedark
+colorscheme gruvbox
+set background=dark
 
 let mapleader=" "
 
