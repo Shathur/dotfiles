@@ -99,6 +99,7 @@ syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 autocmd Filetype notes WP
+autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s
 
 if has ("autocmd")
     "autocmd vimenter * NERDTree | wincmd p
