@@ -296,21 +296,22 @@ xmap gz <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap gz <Plug>(EasyAlign)
 
-func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
   setlocal norelativenumber
   nnoremap k gk
   nnoremap j gj
   nnoremap gk k
   nnoremap gj j
-  setlocal spell spelllang=sv
-  " set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  setlocal spell spelllang=en,sv
+  set thesaurus+=/home/elnystro/mthesaur.txt
+  set thesaurus+=/home/elnystro/ordlista.txt
   set complete+=s
   set formatprg=par
-  setlocal wrap 
-  setlocal linebreak 
-endfu 
+  setlocal wrap
+  setlocal linebreak
+endfu
 com! WP call WordProcessorMode()
 
 hi link SneakPluginTarget Cursor
