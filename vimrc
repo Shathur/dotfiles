@@ -96,7 +96,7 @@ set formatoptions+=j
 set cursorline
 
 syntax on
-autocmd FileType yang setlocal shiftwidth=2 tabstop=2
+autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
 autocmd Filetype notes WP
 
