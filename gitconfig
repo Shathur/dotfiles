@@ -10,7 +10,7 @@
     edit = !$EDITOR $(git status --short | cut -d' ' -f3)
     lo = log --graph --decorate --pretty=oneline --abbrev-commit
     loa = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    last = log --name-status HEAD^..HEAD
+    last = log -1
 [color]
     branch = auto
     diff = auto
