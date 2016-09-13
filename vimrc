@@ -102,8 +102,6 @@ autocmd Filetype notes WP
 autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s
 
 if has ("autocmd")
-    "autocmd vimenter * NERDTree | wincmd p
-    "autocmd BufNewFile * if &filetype == "" | set filetype=txt | endif
     autocmd FocusLost,InsertEnter   * set norelativenumber
     autocmd FocusGained,InsertLeave * set relativenumber
 endif
