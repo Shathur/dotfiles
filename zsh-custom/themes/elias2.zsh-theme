@@ -9,8 +9,31 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT="%{$fg_bold[blue]%}[${current_dir}]%{$reset_color%}\
+autoload -U add-zsh-hook
+
+function elias2_preexec() {
+  timer=${timer:-$SECONDS}
+}
+add-zsh-hook preexec elias2_preexec
+
+function elias2_precmd() {
+  if [ $timer ]; then
+    timer_show=$(($SECONDS - $timer))
+    if (( timer_show )); then
+        export RPROMPT="%F{cyan}${timer_show} s %{$reset_color%}"
+    else
+        export RPROMPT=""
+    fi
+    unset timer
+  else
+      time_show=""
+      export RPROMPT=""
+  fi
+}
+add-zsh-hook precmd elias2_precmd
+
+PROMPT="╭%{$fg_bold[blue]%}[${current_dir}]%{$reset_color%}\
 ${git_info} \
 %{$fg[black]%}${git_last_commit}%{$reset_color%}
-⌚ %{$fg_bold[red]%}%* \
+╰⌚ %{$fg_bold[red]%}%* \
 %{$terminfo[bold]$fg[white]%}› %{$reset_color%}"
