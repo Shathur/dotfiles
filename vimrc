@@ -313,3 +313,5 @@ endfu
 com! WP call WordProcessorMode()
 
 hi link SneakPluginTarget Cursor
+
+set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
