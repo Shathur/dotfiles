@@ -95,6 +95,7 @@ alias ncli='nclij -C'
 alias nenv='make env.sh && . env.sh'
 alias .='source'
 alias zshrc='. ~/.zshrc'
+alias pss="ps -ef | grep 'ssh -f'"
 
 DEFAULT_USER=elnystro
 
