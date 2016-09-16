@@ -20,6 +20,9 @@ function elias2_precmd() {
   if [ $timer ]; then
     timer_show=$(($SECONDS - $timer))
     if (( timer_show )); then
+        if [[ $timer_show -gt 59 ]]; then
+            timer_show="$(($timer_show / 60)) m, $(($timer_show % 60))"
+        fi
         export RPROMPT="%F{cyan}${timer_show} s %{$reset_color%}"
     else
         export RPROMPT=""
