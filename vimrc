@@ -33,7 +33,6 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'justinmk/vim-sneak'
 Plugin 'majutsushi/tagbar'
-Plugin 'matze/vim-move'
 Plugin 'mbbill/undotree'
 Plugin 'morhetz/gruvbox'
 "Plugin 'Raimondi/delimitMate'
@@ -172,12 +171,6 @@ endfunction
 
 nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
 
-" move lines
-let g:move_map_keys = 0
-vmap <leader>J <Plug>MoveBlockDown
-vmap <leader>K <Plug>MoveBlockUp
-nmap <leader>K <Plug>MoveLineUp
-nmap <leader>J <Plug>MoveLineDown
 
 " move between windows
 nmap <C-H> <C-W>h
