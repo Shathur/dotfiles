@@ -119,3 +119,5 @@ TMOUT=1
 TRAPALRM() {
     zle reset-prompt
 }
+
+bindkey -M isearch '^S' history-incremental-search-forward
