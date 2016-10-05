@@ -93,6 +93,8 @@ set nobackup
 set noswapfile
 set formatoptions+=j
 set cursorline
+set backspace=indent,eol
+set showmatch
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
