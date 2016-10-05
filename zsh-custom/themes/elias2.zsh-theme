@@ -35,8 +35,8 @@ function elias2_precmd() {
 }
 add-zsh-hook precmd elias2_precmd
 
-PROMPT="╭%{$fg_bold[blue]%}[${current_dir}]%{$reset_color%}\
+PROMPT="╭%{$FG[111]%}[${current_dir}]%{$reset_color%}\
 ${git_info} \
-%{$fg[cyan]%}${git_last_commit}%{$reset_color%}
-╰⌚ %{$fg_bold[red]%}%* \
+%{$FG[238]%}${git_last_commit}%{$reset_color%}
+╰⌚ %{$FG[094]%}%* \
 %{$terminfo[bold]$fg[white]%}› %{$reset_color%}"
