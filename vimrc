@@ -311,4 +311,7 @@ hi link SneakPluginTarget Cursor
 
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
+map cpy :w<Home>silent <End> !xclip -selection c<CR>
+map cpyy :silent .w !xclip -selection c<CR>
+
 let g:ycm_seed_identifiers_with_syntax = 1
