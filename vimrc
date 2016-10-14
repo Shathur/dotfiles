@@ -111,6 +111,9 @@ endif
 colorscheme gruvbox
 set background=dark
 
+" transparent background
+autocmd VimEnter * hi Normal ctermbg=none
+
 let mapleader=" "
 
 map <C-n> :NERDTreeTabsToggle<CR>
@@ -173,7 +176,6 @@ function! g:ToggleColorColumn()
 endfunction
 
 nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
-
 
 " move between windows
 nmap <C-H> <C-W>h
