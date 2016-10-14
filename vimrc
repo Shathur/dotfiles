@@ -312,9 +312,34 @@ com! WP call WordProcessorMode()
 
 hi link SneakPluginTarget Cursor
 
+
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
-map cpy :w<Home>silent <End> !xclip -selection c<CR>
-map cpyy :silent .w !xclip -selection c<CR>
-
 let g:ycm_seed_identifiers_with_syntax = 1
+
+command! -range WriteSelection <line1>,<line2>call WriteSelection()
+
+function! WriteSelection() range
+    " Get the start and end of the ranges
+    let RangeStart = getpos("'<")
+    let RangeEnd = getpos("'>")
+
+    " Result is [bufnum, lnum, col, off]
+
+    " Check both the start and end are on the same line
+    if RangeStart[1] == RangeEnd[1]
+        " Get the whole line
+        let WholeLine = getline(RangeStart[1])
+
+        " Extract the relevant part and put it in a list
+        let PartLine = [WholeLine[RangeStart[2]-1:RangeEnd[2]-1]]
+
+        " Write to the requested file
+        " call writefile(PartLine, '!xlicp -selection c')
+        exec '!echo '.get(PartLine, 0, 'default').' | xclip -selection c'
+    endif
+endfunction
+
+map cpyl :w<Home>silent <End> !xclip -selection c<CR>
+map cpyy :silent .w !xclip -selection c<CR>
+map cpy :WriteSelection<Home>silent <End><CR>
