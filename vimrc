@@ -15,6 +15,7 @@ Bundle 'wellle/targets.vim'
 
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ap/vim-buftabline'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
@@ -118,6 +119,24 @@ autocmd VimEnter * hi Normal ctermbg=none
 
 let mapleader=" "
 
+nmap <leader>l :ls<CR>:buffer<SPACE>
+nmap <leader>q :bd<CR>
+nmap <leader>p :bp<CR>
+nmap <leader>n :bn<CR>
+
+let g:buftabline_numbers=1
+let g:buftabline_indicators=1
+
+nmap <leader>1 :buffer 1<CR>
+nmap <leader>2 :buffer 2<CR>
+nmap <leader>3 :buffer 3<CR>
+nmap <leader>4 :buffer 4<CR>
+nmap <leader>5 :buffer 5<CR>
+nmap <leader>6 :buffer 6<CR>
+nmap <leader>7 :buffer 7<CR>
+nmap <leader>8 :buffer 8<CR>
+nmap <leader>9 :buffer 9<CR>
+
 map <C-n> :NERDTreeTabsToggle<CR>
 map <F2> :e $MYVIMRC<CR>
 
@@ -134,32 +153,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#obsession#indicator_text = '✔'
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|asciidoc|notes'
-
-" enable airline tabs
-let g:airline#extensions#tabline#enabled = 1
-
-" only show file name
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" show their index (not necessarily the same as buffer number)
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-
-" To open a new empty buffer
-nmap <leader>t :enew<cr>
-nmap <leader>T :new<cr>
-
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nmap <leader>q :bp <BAR> bd #<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
@@ -195,7 +188,7 @@ nmap <F10> :set paste!<CR>
 
 "cscope
 nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-nnoremap <leader>l :call ToggleLocationList()<CR>
+nnoremap <leader>fl :call ToggleLocationList()<CR>
 let g:cscope_silent = 1
 
 "EasyMotion
@@ -243,8 +236,8 @@ map <F3> :noh<CR>
 
 set t_ut=
 
-map <leader>p :GitGutterPrevHunk<CR>
-map <leader>n :GitGutterNextHunk<CR>
+map <leader>P :GitGutterPrevHunk<CR>
+map <leader>N :GitGutterNextHunk<CR>
 map <leader>r :GitGutterUndoHunk<CR>
 map <leader>s :GitGutterStageHunk<CR>
 
