@@ -97,6 +97,7 @@ set cursorline
 set backspace=indent,eol
 set showmatch
 set matchtime=1
+set tildeop
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
@@ -312,7 +313,6 @@ endfu
 com! WP call WordProcessorMode()
 
 hi link SneakPluginTarget Cursor
-
 
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
