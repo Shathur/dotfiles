@@ -10,6 +10,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+packadd! matchit
+
 Bundle 'nathanalderson/yang.vim'
 Bundle 'wellle/targets.vim'
 
@@ -24,7 +26,7 @@ Plugin 'bruno-/vim-vertical-move'
 "Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'edsono/vim-matchit'
+" Plugin 'edsono/vim-matchit'
 " Plugin 'flazz/vim-colorschemes'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
