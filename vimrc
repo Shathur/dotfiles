@@ -121,8 +121,6 @@ let mapleader=" "
 
 nmap <leader>l :ls<CR>:buffer<SPACE>
 nmap <leader>q :bd<CR>
-nmap <leader>p :bp<CR>
-nmap <leader>n :bn<CR>
 
 let g:buftabline_numbers=1
 let g:buftabline_indicators=1
@@ -236,10 +234,12 @@ map <F3> :noh<CR>
 
 set t_ut=
 
-map <leader>P :GitGutterPrevHunk<CR>
-map <leader>N :GitGutterNextHunk<CR>
+map <leader>p :GitGutterPrevHunk<CR>
+map <leader>n :GitGutterNextHunk<CR>
 map <leader>r :GitGutterUndoHunk<CR>
 map <leader>s :GitGutterStageHunk<CR>
+
+let g:gitgutter_max_signs = 2000 " (default: 500)
 
 " Follow symlinks when opening a file {{{
 
