@@ -3,14 +3,23 @@
     name = Elias Nyström
 [core]
     editor = vim
-	excludesfile = /home/elnystro/.gitignore_global
+    excludesfile = /home/elnystro/.gitignore_global
 [push]
     default = simple
 [alias]
     edit = !$EDITOR $(git status --short | cut -d' ' -f3)
-    lo = log --graph --decorate --pretty=oneline --abbrev-commit
-    loa = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    last = log -1
+    int = add --interactive
+    lo = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    loa = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+    uno  = status -uno --ignore-submodules
+    wdiff = diff --color-words=.
+    co = checkout
+    st = status
+	s = status -s
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+    amno = commit --amend --no-edit
+    reset-to-head = reset --hard ORIG_HEAD
+    comm = commit -m
 [color]
     branch = auto
     diff = auto
@@ -18,12 +27,12 @@
     status = auto
 [color "diff"]
     meta = yellow
-	old = magenta
-	new = green
+    old = magenta
+    new = green
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = magenta
+    added = green
+    changed = yellow
+    untracked = magenta
 [diff]
     tool = meld
 [merge]
