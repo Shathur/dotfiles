@@ -29,6 +29,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'EinfachToll/DidYouMean'
 " Plugin 'edsono/vim-matchit'
 " Plugin 'flazz/vim-colorschemes'
+Plugin 'gregsexton/gitv'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 Plugin 'jeetsukumaran/vim-indentwise'
@@ -326,4 +327,10 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive
 
 let g:syntastic_make_checkers = ['gnumake']
 let g:syntastic_javascript_checkers = ['json_tool']
+
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_TruncateCommitSubjects = 1
+let g:Gitv_WrapLines = 0
+let g:Gitv_OpenPreviewOnLaunch = 0
+let g:Gitv_DoNotMapCtrlKey = 1
 
