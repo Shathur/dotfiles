@@ -103,10 +103,17 @@ set backspace=indent,eol
 set showmatch
 set matchtime=1
 set tildeop
+set lazyredraw
+set makeprg=make
+set splitright
+set undofile
+set undodir="/home/elnystro/.vim/undo"
+set shortmess+=c
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
+autocmd FileType java setlocal makeprg=make
 autocmd Filetype notes WP
 autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s
 
@@ -119,7 +126,8 @@ colorscheme gruvbox
 set background=dark
 
 " transparent background
-autocmd VimEnter * hi Normal ctermbg=none
+" hi Normal ctermbg=none
+" autocmd VimEnter,FocusGained * hi Normal guibg=none ctermbg=none
 
 let mapleader=" "
 
