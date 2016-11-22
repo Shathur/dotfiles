@@ -44,6 +44,7 @@ Plugin 'myint/syntastic-extras'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -334,3 +335,5 @@ let g:Gitv_WrapLines = 0
 let g:Gitv_OpenPreviewOnLaunch = 0
 let g:Gitv_DoNotMapCtrlKey = 1
 
+vmap [s <Plug>(expand_region_shrink)
+vmap ]s <Plug>(expand_region_expand)
