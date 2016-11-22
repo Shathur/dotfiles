@@ -96,6 +96,10 @@ alias nenv='make env.sh && . env.sh'
 alias .='source'
 alias zshrc='. ~/.zshrc'
 alias pss="ps -ef | grep 'ssh -f' | grep -v grep"
+alias grep='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias rgrep='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
+alias g='git'
+alias sudo='sudo -E'
 
 DEFAULT_USER=elnystro
 
