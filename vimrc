@@ -123,8 +123,8 @@ autocmd VimEnter * hi Normal ctermbg=none
 
 let mapleader=" "
 
-nmap <leader>l :ls<CR>:buffer<SPACE>
-nmap <leader>q :bd<CR>
+nmap <leader>b :ls<CR>:b
+nmap <leader>x :bd<CR>
 
 let g:buftabline_numbers=1
 let g:buftabline_indicators=1
@@ -179,8 +179,6 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
-
-nmap <leader>x A;<Esc>
 
 let g:ctrlp_working_path_mode = '0'
 
@@ -238,8 +236,6 @@ map <F3> :noh<CR>
 
 set t_ut=
 
-map <leader>p :GitGutterPrevHunk<CR>
-map <leader>n :GitGutterNextHunk<CR>
 map <leader>r :GitGutterUndoHunk<CR>
 map <leader>s :GitGutterStageHunk<CR>
 
@@ -314,6 +310,10 @@ hi link SneakPluginTarget Cursor
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
 let g:ycm_seed_identifiers_with_syntax = 1
+
+let g:windowswap_map_keys = 0
+nmap <leader>ww WindowSwap#EsayWindowSwap
+
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
 
 let g:syntastic_make_checkers = ['gnumake']
