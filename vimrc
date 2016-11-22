@@ -39,10 +39,10 @@ Plugin 'justinmk/vim-sneak'
 Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'morhetz/gruvbox'
+Plugin 'myint/syntastic-extras'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'scrooloose/syntastic'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
@@ -58,6 +58,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-utils/vim-g2'
 Plugin 'vim-utils/vim-husk'
 Plugin 'vim-utils/vim-interruptless'
@@ -313,3 +314,8 @@ hi link SneakPluginTarget Cursor
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
 let g:ycm_seed_identifiers_with_syntax = 1
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': [] }
+
+let g:syntastic_make_checkers = ['gnumake']
+let g:syntastic_javascript_checkers = ['json_tool']
+
