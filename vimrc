@@ -333,6 +333,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [], 'passive
 
 let g:syntastic_make_checkers = ['gnumake']
 let g:syntastic_javascript_checkers = ['json_tool']
+let g:syntastic_always_populate_loc_list = 1
 
 let g:Gitv_OpenHorizontal = 1
 let g:Gitv_TruncateCommitSubjects = 1
