@@ -39,6 +39,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'justinmk/vim-sneak'
+Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
 Plugin 'mbbill/undotree'
 Plugin 'mhinz/vim-randomtag'
@@ -344,3 +345,5 @@ let g:Gitv_DoNotMapCtrlKey = 1
 
 vmap [s <Plug>(expand_region_shrink)
 vmap ]s <Plug>(expand_region_expand)
+
+let g:quickfixsigns_classes = ['qfl', 'loc']
