@@ -104,8 +104,6 @@ set hidden
 set incsearch
 set ignorecase smartcase
 set showcmd
-set nobackup
-set noswapfile
 set formatoptions+=j
 set cursorline
 set backspace=indent,eol
@@ -116,8 +114,11 @@ set lazyredraw
 set makeprg=make
 set splitright
 set undofile
-set undodir="/home/elnystro/.vim/undo"
+set undodir=~/.vim/undo"
 set shortmess+=c
+set backupskip=/tmp/*
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
