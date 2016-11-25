@@ -13,10 +13,9 @@ Plugin 'VundleVim/Vundle.vim'
 packadd! matchit
 
 Bundle 'nathanalderson/yang.vim'
-Bundle 'wellle/targets.vim'
-
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-rooter'
 Plugin 'ap/vim-buftabline'
 Plugin 'AndrewRadev/linediff.vim'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -30,10 +29,13 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'EinfachToll/DidYouMean'
 " Plugin 'edsono/vim-matchit'
+" Plugin 'ervandew/eclim'
 " Plugin 'flazz/vim-colorschemes'
 Plugin 'gregsexton/gitv'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
+" Plugin 'henrik/vim-indexed-search'
+" Plugin 'javacomplete'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'joshdick/onedark.vim'
@@ -56,6 +58,7 @@ Plugin 'tomtom/quickfixsigns_vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-repeat'
@@ -73,6 +76,7 @@ Plugin 'vim-utils/vim-husk'
 Plugin 'vim-utils/vim-interruptless'
 Plugin 'vim-utils/vim-line'
 Plugin 'vim-utils/vim-man'
+Plugin 'wellle/targets.vim'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
@@ -119,6 +123,7 @@ set shortmess+=c
 set backupskip=/tmp/*
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+set wildmenu
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
@@ -249,6 +254,7 @@ map <F5> :HighlightTags<CR>
 set cpoptions+="d"
 set tags=./tags
 let g:easytags_dynamic_files = 2
+let g:easytags_events = ['BufWritePost', 'BufReadPost']
 
 map <F3> :noh<CR>
 
