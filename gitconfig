@@ -15,10 +15,15 @@
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
     whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
+    ; pager = diff-highlight | diff-so-fancy | less --tabs=4 -RF
+
 [pager]
-    # insanely beautiful diffs ==> npm install -g diff-so-fancy
-    diff = diff-so-fancy | less --tabs=4 -RF
-    show = diff-so-fancy | less --tabs=4 -RF
+    # " = true" means use pager defined in [core]
+	; add      = false
+	diff     = diff-highlight | diff-so-fancy | less --tabs=4 -RF
+	; difftool = false
+	; log      = false
+	show     = diff-highlight | diff-so-fancy | less --tabs=4 -RF
 
 [interactive]
     diffFilter = "diff-so-fancy"
@@ -39,7 +44,6 @@
     b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
     amno = commit --amend --no-edit
     comm = commit -m
-    dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
 
 [color]
     ui = always
@@ -61,11 +65,10 @@
     tool = meld
 
 [diff-so-fancy]
-    newNormal = green
     stripLeadingSymbols = false
 
-[color "diff-highlight"]
-    oldNormal = red
-    oldHighlight = red 217
-    newNormal = green
-    newHighlight = green 157
+; [color "diff-highlight"]
+;     oldNormal = red
+;     oldHighlight = red 217
+;     newNormal = green
+;     newHighlight = green 157
