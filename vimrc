@@ -12,7 +12,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 packadd! matchit
 
-Bundle 'nathanalderson/yang.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 " Plugin 'airblade/vim-rooter'
@@ -50,6 +49,7 @@ Plugin 'myint/syntastic-extras'
 "Plugin 'Raimondi/delimitMate'
 "Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Shathur/yang.vim'
 Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
