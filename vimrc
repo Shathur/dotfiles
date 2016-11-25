@@ -354,3 +354,21 @@ vmap [s <Plug>(expand_region_shrink)
 vmap ]s <Plug>(expand_region_expand)
 
 let g:quickfixsigns_classes = ['qfl', 'loc']
+
+let g:tagbar_show_linenumbers = 2
+let g:tagbar_type_yang = {
+  \ 'ctagstype': 'yang',
+  \ 'kinds' : [
+      \'m:Modules',
+      \'i:Imports',
+      \'x:Includes',
+      \'f:Features',
+      \'y:Identities',
+      \'a:Toptags',
+      \'t:Types',
+      \'g:Groupings',
+      \'n:Notifications',
+      \'r:RPCs',
+      \'l:Lists',
+  \]
+\}
