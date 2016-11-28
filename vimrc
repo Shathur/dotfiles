@@ -55,7 +55,7 @@ Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'tomtom/quickfixsigns_vim'
+" Plugin 'tomtom/quickfixsigns_vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-eunuch'
@@ -364,7 +364,8 @@ let g:Gitv_DoNotMapCtrlKey = 1
 vmap [s <Plug>(expand_region_shrink)
 vmap ]s <Plug>(expand_region_expand)
 
-let g:quickfixsigns_classes = ['qfl', 'loc']
+" let g:quickfixsigns_classes = ['qfl', 'loc']
+" let g:quickfixsigns_class_cursor = {}
 
 let g:tagbar_show_linenumbers = 2
 let g:tagbar_type_yang = {
