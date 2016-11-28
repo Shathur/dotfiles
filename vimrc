@@ -34,6 +34,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'haya14busa/incsearch.vim'
 Plugin 'haya14busa/incsearch-fuzzy.vim'
 " Plugin 'henrik/vim-indexed-search'
+Plugin 'honza/vim-snippets'
 " Plugin 'javacomplete'
 Plugin 'jeetsukumaran/vim-indentwise'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -51,6 +52,7 @@ Plugin 'myint/syntastic-extras'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shathur/yang.vim'
 Plugin 'Shathur/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 Plugin 'szw/vim-maximizer'
 Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
@@ -392,3 +394,6 @@ let g:maximizer_default_mapping_key = '<F6>'
 
 command! Reload :source $MYVIMRC | :noh
 cabbrev R Reload
+
+let g:UltiSnipsExpandTrigger='<c-Space>'
+set rtp+='~/stash/dotfiles/vimruntime/'

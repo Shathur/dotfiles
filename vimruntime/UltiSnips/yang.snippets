@@ -1,0 +1,171 @@
+snippet aug
+augment "${1}" {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet org
+organization "${1}";
+endsnippet
+
+snippet imp
+import ${1} {
+  prefix ${2};
+}
+endsnippet
+
+snippet conf
+config false;
+endsnippet
+
+snippet contact
+contact
+  "${1}";
+endsnippet
+
+snippet cont
+container ${1} {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet desc
+description
+  "${1}";
+endsnippet
+
+snippet tin
+tailf:info "${1}";
+endsnippet
+
+snippet def
+default ${1};
+endsnippet
+
+snippet en
+enumeration {
+   enum ${1} { tailf:info "${3}" }
+ }
+}
+endsnippet
+
+snippet enum
+enum ${1} {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet id
+identity ${1} {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet idref
+identityref {
+  base ${1};
+}
+endsnippet
+
+snippet if
+if-feature ${1};
+endsnippet
+
+snippet feat
+feature ${1} {
+  description
+  "This features represents the ability to ${2}";
+}
+endsnippet
+
+snippet gr
+grouping ${1} {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet le
+leaf ${1} {
+  tailf:info "${2}";
+}
+endsnippet
+
+snippet leafref
+leafref {
+  path "${1}";
+}
+endsnippet
+
+snippet mod
+module ${1} {
+  ${2}
+}
+endsnippet
+
+snippet name
+namespace "urn:${1}";
+endsnippet
+
+snippet pres
+presense
+  "${1}";
+endsnippet
+
+snippet ref
+reference
+  "${1}";
+endsnippet
+
+snippet rev
+revision `system("date +%Y-%m-%d")` {
+  description
+  "${1}";
+  reference
+  "${2}";
+}
+endsnippet
+
+snippet rpc
+rpc ${1} {
+  description
+  "${2}";
+}
+endsnippet
+
+snippet refine
+refine "${1}" {
+  ${2}
+}
+endsnippet
+
+snippet td
+typedef ${1} {
+  type ${2};
+  description
+  "${3}";
+}
+endsnippet
+
+snippet uses
+uses ${1} {
+  description
+    "${2}";
+}
+endsnippet
+
+snippet max
+max-length ${1};
+endsnippet
+
+snippet min
+min-length ${1};
+endsnippet
+
+snippet man
+mandatory true;
+endsnippet
