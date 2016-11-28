@@ -101,6 +101,8 @@ alias rgrep='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.s
 alias grepr='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
 alias g='git'
 alias sudo='sudo -E'
+alias rm='rm -i'
+alias mv='mv -i'
 
 DEFAULT_USER=elnystro
 
