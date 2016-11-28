@@ -81,7 +81,6 @@ Plugin 'wesQ3/vim-windowswap'
 Plugin 'xolox/vim-easytags'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-Plugin 'dracula/vim'
 "Plugin 'kana/vim-metarw'
 "Plugin 'mattn/vim-metarw-gdrive'
 
@@ -99,6 +98,12 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+cabbrev PL PluginList
+cabbrev PI PluginInstall
+cabbrev PS PluginSearch
+cabbrev PU PluginUpdate
+cabbrev PC PluginClean
 
 set number
 set ruler
@@ -122,7 +127,8 @@ set undodir=~/.vim/undo"
 set shortmess+=c
 set backupskip=/tmp/*
 set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
+" set directory=~/.vim/swaps
+set noswapfile
 set wildmenu
 
 syntax on
@@ -195,7 +201,8 @@ function! g:ToggleColorColumn()
     endif
 endfunction
 
-nnoremap <silent> <F6> :call g:ToggleColorColumn()<CR>
+command! ToggleColorColumn :call g:ToggleColorColumn()
+cabbrev TCC ToggleColorColumn
 
 " move between windows
 nmap <C-H> <C-W>h
@@ -204,6 +211,11 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
 let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_extensions = ['buffertag', 'quickfix', 'undo', 'changes']
+" let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+"                         \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+
+map <F5> :CtrlPBufTagAll<CR>
 
 map <F9> :Gst<CR>
 
@@ -248,8 +260,7 @@ map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
-map <F4> :UpdateTags<CR>
-map <F5> :HighlightTags<CR>
+map <F4> :UpdateTags<CR>:HighlightTags<CR>
 
 set cpoptions+="d"
 set tags=./tags
@@ -372,3 +383,8 @@ let g:tagbar_type_yang = {
       \'l:Lists',
   \]
 \}
+
+noremap <leader>c :let @+=@"<CR>
+
+command! Reload :source $MYVIMRC | :noh
+cabbrev R Reload
