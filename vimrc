@@ -51,6 +51,7 @@ Plugin 'myint/syntastic-extras'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shathur/yang.vim'
 Plugin 'Shathur/YouCompleteMe'
+Plugin 'szw/vim-maximizer'
 Plugin 'terryma/vim-expand-region'
 "Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tmux-plugins/vim-tmux'
@@ -386,6 +387,8 @@ let g:tagbar_type_yang = {
 \}
 
 noremap <leader>c :let @+=@"<CR>
+
+let g:maximizer_default_mapping_key = '<F6>'
 
 command! Reload :source $MYVIMRC | :noh
 cabbrev R Reload
