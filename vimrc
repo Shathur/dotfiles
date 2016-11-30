@@ -12,80 +12,70 @@ Plugin 'VundleVim/Vundle.vim'
 
 packadd! matchit
 
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-" Plugin 'airblade/vim-rooter'
-Plugin 'ap/vim-buftabline'
-Plugin 'AndrewRadev/linediff.vim'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'benmills/vimux'
-Plugin 'bling/vim-airline'
-Plugin 'brookhong/cscope.vim'
-Plugin 'bruno-/vim-vertical-move'
-"Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'EinfachToll/DidYouMean'
-" Plugin 'edsono/vim-matchit'
-" Plugin 'ervandew/eclim'
-" Plugin 'flazz/vim-colorschemes'
-Plugin 'gregsexton/gitv'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-" Plugin 'henrik/vim-indexed-search'
-Plugin 'honza/vim-snippets'
-" Plugin 'javacomplete'
-Plugin 'jeetsukumaran/vim-indentwise'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'joshdick/onedark.vim'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'justinmk/vim-sneak'
-Plugin 'kshenoy/vim-signature'
-Plugin 'majutsushi/tagbar'
-Plugin 'mbbill/undotree'
-Plugin 'mhinz/vim-randomtag'
-Plugin 'morhetz/gruvbox'
-Plugin 'myint/syntastic-extras'
-"Plugin 'Raimondi/delimitMate'
-"Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Shathur/yang.vim'
-Plugin 'Shathur/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'szw/vim-maximizer'
-Plugin 'terryma/vim-expand-region'
-"Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-" Plugin 'tomtom/quickfixsigns_vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'Valloric/ListToggle'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/TaskList.vim'
-Plugin 'vim-scripts/Txtfmt-The-Vim-Highlighter'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-utils/vim-g2'
-Plugin 'vim-utils/vim-husk'
-Plugin 'vim-utils/vim-interruptless'
-Plugin 'vim-utils/vim-line'
-Plugin 'vim-utils/vim-man'
-Plugin 'wellle/targets.vim'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'xolox/vim-easytags'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-"Plugin 'kana/vim-metarw'
-"Plugin 'mattn/vim-metarw-gdrive'
+Plugin 'airblade/vim-gitgutter' " display git changes in sign column
+Plugin 'ap/vim-buftabline' " list buffers at top (I never use tabs anyway)
+Plugin 'AndrewRadev/linediff.vim' " diff lines in in the same file
+Plugin 'AndrewRadev/splitjoin.vim' " switch between single and multi line statements
+Plugin 'benmills/vimux' " call tmux from within vim
+Plugin 'bling/vim-airline' " nice status line
+Plugin 'brookhong/cscope.vim' " cscope integration
+Plugin 'bronson/vim-visual-star-search' " use * and # in visual selection
+Plugin 'bruno-/vim-vertical-move' " move up and down without moving cursor, ]v and [v
+Plugin 'chrisbra/vim-autoread' " real autoread functionality!
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy finder
+Plugin 'easymotion/vim-easymotion' " easy movement (but not sure how useful)
+Plugin 'EinfachToll/DidYouMean' " handle ambiguous paths
+Plugin 'gregsexton/gitv' " alternative to fugitive
+Plugin 'haya14busa/incsearch.vim' " improved /
+Plugin 'haya14busa/incsearch-fuzzy.vim' " fuzzy search with z/
+Plugin 'honza/vim-snippets' " snippets for ultisnips
+Plugin 'jeetsukumaran/vim-indentwise' " move indentwise with [- and ]+
+Plugin 'jistr/vim-nerdtree-tabs' " nerdtree fix
+Plugin 'junegunn/vim-easy-align' " align stuff
+Plugin 'junegunn/vim-peekaboo' " preview registers
+Plugin 'justinmk/vim-sneak' " handy 2 char search with s
+Plugin 'kshenoy/vim-signature' " util for marks
+Plugin 'majutsushi/tagbar' " tagbar F8
+Plugin 'mbbill/undotree' " visualize undo tree (mapped to F7)
+Plugin 'mhinz/vim-randomtag' " :Random displays a random helptag
+Plugin 'morhetz/gruvbox' " colorscheme
+Plugin 'scrooloose/nerdtree' " file browser
+Plugin 'Shathur/tailf.vim' " use for tailing commands
+Plugin 'Shathur/yang.vim' " yang ft, forked for tailf
+Plugin 'Shathur/YouCompleteMe' " completion engine, forked for tailf
+Plugin 'SirVer/ultisnips' " snippets
+Plugin 'szw/vim-maximizer' " toggle maximize window with F6
+Plugin 'terryma/vim-expand-region' " expand/shrink visual selection with + and _
+Plugin 'terryma/vim-multiple-cursors' " edit many occurrences at the same time, ^N
+Plugin 'tmux-plugins/vim-tmux' " ft for .tmux.conf
+Plugin 'tmux-plugins/vim-tmux-focus-events' " correct focus events when run in tmux
+Plugin 'tpope/vim-abolish' " substitue variations of words
+Plugin 'tpope/vim-commentary' " quick commenting with gcc
+Plugin 'tpope/vim-eunuch' " unix sugar like :Rename and :Delete
+Plugin 'tpope/vim-git' " vim-git runtime files
+Plugin 'tpope/vim-fugitive' " git integration
+Plugin 'tpope/vim-obsession' " track sessions
+Plugin 'tpope/vim-repeat' " repeat more stuff with .
+Plugin 'tpope/vim-speeddating' " {in,de}crement dates with ^A and ^X
+Plugin 'tpope/vim-surround' " surround stuff, like ysiw(
+Plugin 'tpope/vim-unimpaired' " some pair mappings, like [b [e [<Space> etc.
+Plugin 'Valloric/ListToggle' " toggle open quickfix and location list w <ldr>q, <ldr>l
+Plugin 'vim-airline/vim-airline-themes' " themes for airline
+Plugin 'vim-scripts/TaskList.vim' " toggle eclipse-like tasklist with <ldr>t
+Plugin 'vim-utils/vim-g2' " get binary representation of a char with g2
+Plugin 'vim-utils/vim-husk' " boost the command-line
+Plugin 'vim-utils/vim-interruptless' " disable some annoying messages
+Plugin 'vim-utils/vim-line' " 'inner line' text objects with _
+Plugin 'vim-utils/vim-man' " open man with :Man and :Vman
+Plugin 'wellle/targets.vim' " additional text objects
+Plugin 'wesQ3/vim-windowswap' " swap windows with <ldr>ww
+Plugin 'xolox/vim-easytags' " easy tag generation and handling
+Plugin 'xolox/vim-misc' " depency for easytags and notes
+Plugin 'xolox/vim-notes' " note taking with
+
+" disabled plugins
+" Plugin 'Chiel92/vim-autoformat' " probably not needed
+" Plugin 'ervandew/eclim' " would be great to have, but requires java 7 :(
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -108,38 +98,36 @@ cabbrev PS PluginSearch
 cabbrev PU PluginUpdate
 cabbrev PC PluginClean
 
-set number
-set ruler
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-set autoindent smartindent
-set hidden
-set incsearch
-set ignorecase smartcase
-set showcmd
-set formatoptions+=j
-set cursorline
-set backspace=indent,eol
-set showmatch
-set matchtime=1
-set tildeop
-set lazyredraw
-set makeprg=make
-set splitright
-set undofile
-set undodir=~/.vim/undo"
-set shortmess+=c
-set backupskip=/tmp/*
-set backupdir=~/.vim/backups
-" set directory=~/.vim/swaps
-set noswapfile
-set wildmenu
+set number " display line numbers by default
+set ruler " obsoleted by airline
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab " always use spaces instead of tabs
+set autoindent smartindent " autoindent in new blocks, etc
+set hidden " abandoned buffers become hidden instead of unloaded
+set incsearch " display match when typing
+set ignorecase smartcase " lower case: ignore, any upper case: don't ignore
+set showcmd " display commands as they're being typed
+set formatoptions+=j " remove comment leader when joining lines
+set cursorline " highlight current line
+set backspace=indent,eol " backspace over indents and eol (but not start of insert)
+set showmatch matchtime=1 " jump to matching bracket for 0.1 s
+set tildeop " enable ~ operator (switch case)
+set lazyredraw " don't update screen unnecessarily
+set makeprg=make " always use bare make as make program
+set splitright " open vertical split at the right side
+set undofile undodir=~/.vim/undo" " use undofiles, put them here
+set shortmess+=c " hide ins-completion messages
+set backupskip=/tmp/* " don't backup at this path
+set backupdir=~/.vim/backups " put backups here
+set noswapfile " don't use swap files
+set wildmenu " use completion in cli
+set textwidth=160 " use the modified t-clone textwidth
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
-autocmd FileType java setlocal makeprg=make
-autocmd Filetype notes WP
-autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s
+autocmd FileType java setlocal makeprg=make " java ft wants to use ant
+autocmd Filetype notes WP " use word processor mode for notes
+autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s " custom ft, no detection so far
 
 if has ("autocmd")
     autocmd FocusLost,InsertEnter   * set norelativenumber
@@ -153,7 +141,7 @@ set background=dark
 " hi Normal ctermbg=none
 " autocmd VimEnter,FocusGained * hi Normal guibg=none ctermbg=none
 
-let mapleader=" "
+let mapleader=' ' " space instead of \
 
 nmap <leader>b :ls<CR>:b
 nmap <leader>x :bd<CR>
@@ -171,15 +159,13 @@ nmap <leader>7 :buffer 7<CR>
 nmap <leader>8 :buffer 8<CR>
 nmap <leader>9 :buffer 9<CR>
 
-map <C-n> :NERDTreeTabsToggle<CR>
+map <leader>n :NERDTreeTabsToggle<CR>
 map <F2> :e $MYVIMRC<CR>
 
 " replace word under cursor
 nnoremap <Leader>R :%s/\<<C-r><C-w>\>/
 
-"Remove all trailing whitespace by pressing F7
-nnoremap <F7> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
+" always display status
 set laststatus=2
 
 let g:airline_powerline_fonts = 1
@@ -195,18 +181,6 @@ nnoremap Q <nop>
 
 nnoremap <leader>u :update<CR>
 
-" toggle vertical bar at 80 chars
-function! g:ToggleColorColumn()
-    if &colorcolumn != ''
-        setlocal colorcolumn&
-    else
-        setlocal colorcolumn=80
-    endif
-endfunction
-
-command! ToggleColorColumn :call g:ToggleColorColumn()
-cabbrev TCC ToggleColorColumn
-
 " move between windows
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
@@ -214,11 +188,7 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
 let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_extensions = ['buffertag', 'quickfix', 'undo', 'changes']
-" let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-"                         \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
-
-map <F5> :CtrlPBufTagAll<CR>
+let g:ctrlp_extensions = ['quickfix']
 
 map <F9> :Gst<CR>
 
@@ -392,8 +362,19 @@ noremap <leader>c :let @+=@"<CR>
 
 let g:maximizer_default_mapping_key = '<F6>'
 
-command! Reload :source $MYVIMRC | :noh
+command! Reload :source $MYVIMRC | noh
 cabbrev R Reload
 
 let g:UltiSnipsExpandTrigger='<c-Space>'
 set rtp+='~/stash/dotfiles/vimruntime/'
+
+cab mm Man
+cab vm Vman
+cab makE make
+cab RT RemoveTrailingSpaces
+cab GGPH GitGutterPreviewHunk
+
+" Delay opening of peekaboo window (in ms. default: 0)
+let g:peekaboo_delay = 750
+
+nnoremap <F7> :UndotreeToggle<cr>
