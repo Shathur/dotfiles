@@ -15,15 +15,9 @@
     # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
     whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
-    ; pager = diff-highlight | diff-so-fancy | less --tabs=4 -RF
-
 [pager]
-    # " = true" means use pager defined in [core]
-	; add      = false
-	diff     = diff-highlight | diff-so-fancy | less --tabs=4 -RF
-	; difftool = false
-	; log      = false
-	show     = diff-highlight | diff-so-fancy | less --tabs=4 -RF
+    diff     = diff-highlight | diff-so-fancy | less --tabs=4
+    show     = diff-highlight | diff-so-fancy | less --tabs=4
 
 [interactive]
     diffFilter = "diff-so-fancy"
