@@ -83,26 +83,24 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias agi='sudo apt-get install'
-alias agu='sudo apt-get update'
-alias up='cd ..'
+alias agi='sudo apt install'
+alias agu='sudo apt update'
 function cdl { cd $1; ls;}
 alias lt='ls -lt'
-alias sub='cd ~/stash/unix-bind/src'
-alias eub='cd ~/ncs-envs/unix-bind/ && ncs -c ncs.conf && ncs_cli -u admin'
 alias nclij='ncs_cli -u admin'
 alias ncli='nclij -C'
 alias nenv='make env.sh && . env.sh'
 alias .='source'
 alias zshrc='. ~/.zshrc'
 alias pss="ps -ef | grep 'ssh -f' | grep -v grep"
-alias grep='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
-alias rgrep='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
-alias grepr='grep --line-number --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+alias rgrep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
+alias grepr='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} --recursive'
 alias g='git'
 alias sudo='sudo -E'
 alias rm='rm -i'
 alias mv='mv -i'
+alias tailf='tail -f'
 
 DEFAULT_USER=elnystro
 
