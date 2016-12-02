@@ -18,7 +18,7 @@ mkdir -p $olddir
 # change to the dotfiles directory
 cd $dir
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
     mv ~/.$file ~/dotfiles_old/
     ln -s $dir/$file ~/.$file
