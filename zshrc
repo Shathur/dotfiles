@@ -106,7 +106,7 @@ DEFAULT_USER=elnystro
 
 export TERM=xterm-256color
 
-source ~/ncs-releases/4.2/ncsrc
+source ~/ncs-releases/4.3/ncsrc
 export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
 # export JAVA_HOME="/usr/local/java/jdk1.8.0_102"
 
