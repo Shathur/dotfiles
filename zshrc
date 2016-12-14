@@ -50,7 +50,7 @@ ZSH_CUSTOM=/home/elnystro/stash/dotfiles/zsh-custom/
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo tmux zsh-syntax-highlighting)
+plugins=(git tmux zsh-syntax-highlighting)
 
 # User configuration
 
