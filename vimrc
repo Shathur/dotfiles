@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 packadd! matchit
 
 Plugin 'airblade/vim-gitgutter' " display git changes in sign column
+Plugin 'airblade/vim-rooter' " cd to project root
 Plugin 'ap/vim-buftabline' " list buffers at top (I never use tabs anyway)
 Plugin 'AndrewRadev/linediff.vim' " diff lines in in the same file
 Plugin 'AndrewRadev/splitjoin.vim' " switch between single and multi line statements
@@ -112,26 +113,34 @@ set backspace=indent,eol " backspace over indents and eol (but not start of inse
 set showmatch matchtime=1 " jump to matching bracket for 0.1 s
 set tildeop " enable ~ operator (switch case)
 set lazyredraw " don't update screen unnecessarily
-set makeprg=make " always use bare make as make program
+set makeprg=make\ -C\ src " always use bare make as make program
 set splitright " open vertical split at the right side
-set undofile undodir=~/.vim/undo" " use undofiles, put them here
+set undofile undodir=~/.vim/undo " use undofiles, put them here
 set shortmess+=c " hide ins-completion messages
 set backupskip=/tmp/* " don't backup at this path
 set backupdir=~/.vim/backups " put backups here
 set noswapfile " don't use swap files
 set wildmenu " use completion in cli
+set wildignore+=.git,bin,netsim,load-dir,test/drned/drned-ncs
 set textwidth=160 " use the modified t-clone textwidth
+set foldnestmax=3 " folds shouldn't be nested too much
+set foldminlines=5 " no use folding less lines than this
+set nofoldenable " don't fold by default
+set history=10000 " remember the last 1000 commands
+set scrolloff=5 " number of lines to keep between cursor and edge
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
 autocmd FileType xml setlocal shiftwidth=2 tabstop=2
-autocmd FileType java setlocal makeprg=make " java ft wants to use ant
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2
 autocmd Filetype notes WP " use word processor mode for notes
-autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s " custom ft, no detection so far
+autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s " custom ft
 
+execute "set scroll=" . &lines / 3
 if has ("autocmd")
     autocmd FocusLost,InsertEnter   * set norelativenumber
     autocmd FocusGained,InsertLeave * set relativenumber
+    autocmd VimResized * execute "set scroll=" . &lines / 3
 endif
 
 colorscheme gruvbox
@@ -170,6 +179,7 @@ set laststatus=2
 
 let g:airline_powerline_fonts = 1
 
+let g:airline#extensions#obsession#enabled = 1
 let g:airline#extensions#obsession#indicator_text = '✔'
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#wordcount#filetypes = '\vhelp|markdown|rst|org|text|asciidoc|notes'
@@ -187,8 +197,9 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_extensions = ['quickfix']
+let g:ctrlp_custom_ignore = '\v/(bin|build)$'
 
 map <F9> :Gst<CR>
 
@@ -373,6 +384,7 @@ cab vm Vman
 cab makE make
 cab RT RemoveTrailingSpaces
 cab GGPH GitGutterPreviewHunk
+cab HT HighlightTags
 
 " Delay opening of peekaboo window (in ms. default: 0)
 let g:peekaboo_delay = 750
