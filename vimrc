@@ -324,7 +324,11 @@ func! WordProcessorMode()
 endfu
 com! WP call WordProcessorMode()
 
-hi link SneakPluginTarget Cursor
+hi! link Sneak Search
+hi! link SneakScope Visual
+hi! link SneakLabel Search
+omap z <Plug>Sneak_s
+omap Z <Plug>Sneak_S
 
 set listchars=eol:¬,tab:→\ ,trail:~,extends:>,precedes:<,space:•,nbsp:␣
 
