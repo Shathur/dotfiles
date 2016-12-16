@@ -381,7 +381,6 @@ command! Reload :source $MYVIMRC | noh
 cabbrev R Reload
 
 let g:UltiSnipsExpandTrigger='<c-Space>'
-set rtp+='~/stash/dotfiles/vimruntime/'
 
 cab mm Man
 cab vm Vman
