@@ -21,12 +21,12 @@ local git_last_commit='$(git log --pretty=format:"%h %<(20,trunc)%s" -1 2> /dev/
 
 autoload -U add-zsh-hook
 
-function elias2_preexec() {
+function elias_preexec() {
   timer=${timer:-$SECONDS}
 }
-add-zsh-hook preexec elias2_preexec
+add-zsh-hook preexec elias_preexec
 
-function elias2_precmd() {
+function elias_precmd() {
   if [ $timer ]; then
     timer_show=$(($SECONDS - $timer))
     if (( timer_show )); then
@@ -42,10 +42,10 @@ function elias2_precmd() {
       export RPROMPT=""
   fi
 }
-add-zsh-hook precmd elias2_precmd
+add-zsh-hook precmd elias_precmd
 
-PROMPT="╭%{$FG[111]%}[${current_dir}]%{$reset_color%} \
-%{$fg[magenta]%}${git_info}${git_status}%{$reset_color%} \
+PROMPT="╭%{$FG[066]%}[${current_dir}]%{$reset_color%} \
+%{$FG[100]%}${git_info}${git_status}%{$reset_color%} \
 %{$FG[238]%}${git_last_commit}%{$reset_color%}
 ╰⌚ %{$FG[094]%}%* \
 %{$terminfo[bold]$fg[white]%}› %{$reset_color%}"
