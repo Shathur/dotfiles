@@ -143,6 +143,7 @@ if has ("autocmd")
     autocmd VimResized * execute "set scroll=" . &lines / 3
 endif
 
+set termguicolors
 colorscheme gruvbox
 set background=dark
 
