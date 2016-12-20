@@ -73,6 +73,7 @@ Plugin 'wesQ3/vim-windowswap' " swap windows with <ldr>ww
 Plugin 'xolox/vim-easytags' " easy tag generation and handling
 Plugin 'xolox/vim-misc' " depency for easytags and notes
 Plugin 'xolox/vim-notes' " note taking with
+Plugin 'Yggdroot/indentLine' " visual indent guides
 
 " disabled plugins
 " Plugin 'Chiel92/vim-autoformat' " probably not needed
@@ -138,9 +139,9 @@ autocmd Filetype cisco setlocal shiftwidth=1 tabstop=1 commentstring=!%s " custo
 
 execute "set scroll=" . &lines / 3
 if has ("autocmd")
-    autocmd FocusLost,InsertEnter   * set norelativenumber
-    autocmd FocusGained,InsertLeave * set relativenumber
-    autocmd VimResized * execute "set scroll=" . &lines / 3
+  autocmd FocusLost,InsertEnter   * set norelativenumber
+  autocmd FocusGained,InsertLeave * set relativenumber
+  autocmd VimResized * execute "set scroll=" . &lines / 3
 endif
 
 set termguicolors
@@ -269,33 +270,33 @@ let g:gitgutter_max_signs = 2000 " (default: 500)
 "  - https://github.com/tpope/vim-fugitive/issues/147#issuecomment-7572351
 "  - http://www.reddit.com/r/vim/comments/yhsn6/is_it_possible_to_work_around_the_symlink_bug/c5w91qw
 function! MyFollowSymlink(...)
-    if exists('w:no_resolve_symlink') && w:no_resolve_symlink
-        return
-    endif
-    let fname = a:0 ? a:1 : expand('%')
-    if fname =~ '^\w\+:/'
-        " Do not mess with 'fugitive://' etc.
-        return
-    endif
-    let fname = simplify(fname)
+  if exists('w:no_resolve_symlink') && w:no_resolve_symlink
+    return
+  endif
+  let fname = a:0 ? a:1 : expand('%')
+  if fname =~ '^\w\+:/'
+    " Do not mess with 'fugitive://' etc.
+    return
+  endif
+  let fname = simplify(fname)
 
-    let resolvedfile = resolve(fname)
-    if resolvedfile == fname
-        return
-    endif
-    let resolvedfile = fnameescape(resolvedfile)
-    let sshm = &shm
-    set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
-    exec 'file ' . resolvedfile
-    let &shm=sshm
+  let resolvedfile = resolve(fname)
+  if resolvedfile == fname
+    return
+  endif
+  let resolvedfile = fnameescape(resolvedfile)
+  let sshm = &shm
+  set shortmess+=A  " silence ATTENTION message about swap file (would get displayed twice)
+  exec 'file ' . resolvedfile
+  let &shm=sshm
 
-    " Re-init fugitive.
-    call fugitive#detect(resolvedfile)
-    if &modifiable
-        " Only display a note when editing a file, especially not for `:help`.
-        redraw  " Redraw now, to avoid hit-enter prompt.
-        echomsg 'Resolved symlink: =>' resolvedfile
-    endif
+  " Re-init fugitive.
+  call fugitive#detect(resolvedfile)
+  if &modifiable
+    " Only display a note when editing a file, especially not for `:help`.
+    redraw  " Redraw now, to avoid hit-enter prompt.
+    echomsg 'Resolved symlink: =>' resolvedfile
+  endif
 endfunction
 command! FollowSymlink call MyFollowSymlink()
 command! ToggleFollowSymlink let w:no_resolve_symlink = !get(w:, 'no_resolve_symlink', 0) | echo "w:no_resolve_symlink =>" w:no_resolve_symlink
@@ -394,3 +395,6 @@ cab HT HighlightTags
 let g:peekaboo_delay = 750
 
 nnoremap <F7> :UndotreeToggle<cr>
+
+" show indent guides with :IdentLinesToggle
+let g:indentLine_enabled = 0
