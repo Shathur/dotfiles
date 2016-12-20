@@ -23,3 +23,5 @@ for file in $files; do
     mv ~/.$file ~/dotfiles_old/ 2>/dev/null
     ln -s $dir/$file ~/.$file
 done
+
+ln -s $dir/nvim ~/.config/nvim
