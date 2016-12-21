@@ -1,5 +1,6 @@
 vim/.*
 vim/bundle/
+vim/plugged/
 vim/backups/
 vim/doc/
 vim/eclim/

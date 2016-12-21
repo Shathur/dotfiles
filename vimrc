@@ -1,104 +1,100 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" auto install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged/')
 
 packadd! matchit
 
-Plugin 'airblade/vim-gitgutter' " display git changes in sign column
-Plugin 'airblade/vim-rooter' " cd to project root
-Plugin 'ap/vim-buftabline' " list buffers at top (I never use tabs anyway)
-Plugin 'AndrewRadev/linediff.vim' " diff lines in in the same file
-Plugin 'AndrewRadev/splitjoin.vim' " switch between single and multi line statements
-Plugin 'benmills/vimux' " call tmux from within vim
-Plugin 'bling/vim-airline' " nice status line
-Plugin 'brookhong/cscope.vim' " cscope integration
-Plugin 'bronson/vim-visual-star-search' " use * and # in visual selection
-Plugin 'bruno-/vim-vertical-move' " move up and down without moving cursor, ]v and [v
-Plugin 'chrisbra/vim-autoread' " real autoread functionality!
-Plugin 'ctrlpvim/ctrlp.vim' " fuzzy finder
-Plugin 'easymotion/vim-easymotion' " easy movement (but not sure how useful)
-Plugin 'EinfachToll/DidYouMean' " handle ambiguous paths
-Plugin 'gregsexton/gitv' " alternative to fugitive
-Plugin 'haya14busa/incsearch.vim' " improved /
-Plugin 'haya14busa/incsearch-fuzzy.vim' " fuzzy search with z/
-Plugin 'honza/vim-snippets' " snippets for ultisnips
-Plugin 'jeetsukumaran/vim-indentwise' " move indentwise with [- and ]+
-Plugin 'jistr/vim-nerdtree-tabs' " nerdtree fix
-Plugin 'junegunn/vim-easy-align' " align stuff
-Plugin 'junegunn/vim-peekaboo' " preview registers
-Plugin 'justinmk/vim-sneak' " handy 2 char search with s
-Plugin 'kshenoy/vim-signature' " util for marks
-Plugin 'majutsushi/tagbar' " tagbar F8
-Plugin 'mbbill/undotree' " visualize undo tree (mapped to F7)
-Plugin 'mhinz/vim-randomtag' " :Random displays a random helptag
-Plugin 'morhetz/gruvbox' " colorscheme
-Plugin 'scrooloose/nerdtree' " file browser
-Plugin 'Shathur/tailf.vim' " use for tailing commands
-Plugin 'Shathur/yang.vim' " yang ft, forked for tailf
-Plugin 'Shathur/YouCompleteMe' " completion engine, forked for tailf
-Plugin 'SirVer/ultisnips' " snippets
-Plugin 'szw/vim-maximizer' " toggle maximize window with F6
-Plugin 'terryma/vim-expand-region' " expand/shrink visual selection with + and _
-Plugin 'terryma/vim-multiple-cursors' " edit many occurrences at the same time, ^N
-Plugin 'tmux-plugins/vim-tmux' " ft for .tmux.conf
-Plugin 'tmux-plugins/vim-tmux-focus-events' " correct focus events when run in tmux
-Plugin 'tpope/vim-abolish' " substitue variations of words
-Plugin 'tpope/vim-commentary' " quick commenting with gcc
-Plugin 'tpope/vim-eunuch' " unix sugar like :Rename and :Delete
-Plugin 'tpope/vim-git' " vim-git runtime files
-Plugin 'tpope/vim-fugitive' " git integration
-Plugin 'tpope/vim-obsession' " track sessions
-Plugin 'tpope/vim-repeat' " repeat more stuff with .
-Plugin 'tpope/vim-speeddating' " {in,de}crement dates with ^A and ^X
-Plugin 'tpope/vim-surround' " surround stuff, like ysiw(
-Plugin 'tpope/vim-unimpaired' " some pair mappings, like [b [e [<Space> etc.
-Plugin 'Valloric/ListToggle' " toggle open quickfix and location list w <ldr>q, <ldr>l
-Plugin 'vim-airline/vim-airline-themes' " themes for airline
-Plugin 'vim-scripts/TaskList.vim' " toggle eclipse-like tasklist with <ldr>t
-Plugin 'vim-utils/vim-g2' " get binary representation of a char with g2
-Plugin 'vim-utils/vim-husk' " boost the command-line
-Plugin 'vim-utils/vim-interruptless' " disable some annoying messages
-Plugin 'vim-utils/vim-line' " 'inner line' text objects with _
-Plugin 'vim-utils/vim-man' " open man with :Man and :Vman
-Plugin 'wellle/targets.vim' " additional text objects
-Plugin 'wesQ3/vim-windowswap' " swap windows with <ldr>ww
-Plugin 'xolox/vim-easytags' " easy tag generation and handling
-Plugin 'xolox/vim-misc' " depency for easytags and notes
-Plugin 'xolox/vim-notes' " note taking with
-Plugin 'Yggdroot/indentLine' " visual indent guides
+Plug 'airblade/vim-gitgutter' " display git changes in sign column
+Plug 'airblade/vim-rooter' " cd to project root
+Plug 'ap/vim-buftabline' " list buffers at top (I never use tabs anyway)
+Plug 'AndrewRadev/linediff.vim' " diff lines in in the same file
+Plug 'AndrewRadev/splitjoin.vim' " switch between single and multi line statements
+Plug 'benmills/vimux' " call tmux from within vim
+Plug 'bling/vim-airline' " nice status line
+Plug 'brookhong/cscope.vim' " cscope integration
+Plug 'bronson/vim-visual-star-search' " use * and # in visual selection
+Plug 'bruno-/vim-vertical-move' " move up and down without moving cursor, ]v and [v
+Plug 'chrisbra/vim-autoread' " real autoread functionality!
+Plug 'ctrlpvim/ctrlp.vim' " fuzzy finder
+Plug 'easymotion/vim-easymotion' " easy movement (but not sure how useful)
+Plug 'EinfachToll/DidYouMean' " handle ambiguous paths
+Plug 'gregsexton/gitv' " alternative to fugitive
+Plug 'haya14busa/incsearch.vim' " improved /
+Plug 'haya14busa/incsearch-fuzzy.vim' " fuzzy search with z/
+Plug 'honza/vim-snippets' " snippets for ultisnips
+Plug 'jeetsukumaran/vim-indentwise' " move indentwise with [- and ]+
+Plug 'jistr/vim-nerdtree-tabs' " nerdtree fix
+Plug 'junegunn/vim-easy-align' " align stuff
+Plug 'junegunn/vim-peekaboo' " preview registers
+Plug 'justinmk/vim-sneak' " handy 2 char search with s
+Plug 'kshenoy/vim-signature' " util for marks
+Plug 'majutsushi/tagbar' " tagbar F8
+Plug 'mbbill/undotree' " visualize undo tree (mapped to F7)
+Plug 'mhinz/vim-randomtag' " :Random displays a random helptag
+Plug 'morhetz/gruvbox' " colorscheme
+Plug 'scrooloose/nerdtree' " file browser
+Plug 'Shathur/tailf.vim' " use for tailing commands
+Plug 'Shathur/yang.vim' " yang ft, forked for tailf
+Plug 'Shathur/YouCompleteMe' " completion engine, forked for tailf (not sure if it can be installed with vim-plug, though)
+Plug 'SirVer/ultisnips' " snippets
+Plug 'szw/vim-maximizer' " toggle maximize window with F6
+Plug 'terryma/vim-expand-region' " expand/shrink visual selection with + and _
+Plug 'terryma/vim-multiple-cursors' " edit many occurrences at the same time, ^N
+Plug 'tmux-plugins/vim-tmux' " ft for .tmux.conf
+Plug 'tmux-plugins/vim-tmux-focus-events' " correct focus events when run in tmux
+Plug 'tpope/vim-abolish' " substitue variations of words
+Plug 'tpope/vim-commentary' " quick commenting with gcc
+Plug 'tpope/vim-eunuch' " unix sugar like :Rename and :Delete
+Plug 'tpope/vim-git' " vim-git runtime files
+Plug 'tpope/vim-fugitive' " git integration
+Plug 'tpope/vim-obsession' " track sessions
+Plug 'tpope/vim-repeat' " repeat more stuff with .
+Plug 'tpope/vim-speeddating' " {in,de}crement dates with ^A and ^X
+Plug 'tpope/vim-surround' " surround stuff, like ysiw(
+Plug 'tpope/vim-unimpaired' " some pair mappings, like [b [e [<Space> etc.
+Plug 'Valloric/ListToggle' " toggle open quickfix and location list w <ldr>q, <ldr>l
+Plug 'vim-airline/vim-airline-themes' " themes for airline
+Plug 'vim-scripts/TaskList.vim' " toggle eclipse-like tasklist with <ldr>t
+Plug 'vim-utils/vim-g2' " get binary representation of a char with g2
+Plug 'vim-utils/vim-husk' " boost the command-line
+Plug 'vim-utils/vim-interruptless' " disable some annoying messages
+Plug 'vim-utils/vim-line' " 'inner line' text objects with _
+Plug 'vim-utils/vim-man' " open man with :Man and :Vman
+Plug 'wellle/targets.vim' " additional text objects
+Plug 'wesQ3/vim-windowswap' " swap windows with <ldr>ww
+Plug 'xolox/vim-easytags' " easy tag generation and handling
+Plug 'xolox/vim-misc' " depency for easytags and notes
+Plug 'xolox/vim-notes' " note taking with
+Plug 'Yggdroot/indentLine' " visual indent guides
 
 " disabled plugins
 " Plugin 'Chiel92/vim-autoformat' " probably not needed
 " Plugin 'ervandew/eclim' " would be great to have, but requires java 7 :(
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 "
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-cabbrev PL PluginList
-cabbrev PI PluginInstall
-cabbrev PS PluginSearch
-cabbrev PU PluginUpdate
-cabbrev PC PluginClean
+cabbrev PL PlugList
+cabbrev PI PlugInstall
+cabbrev PS PlugSearch
+cabbrev PU PlugUpdate
+cabbrev PC PlugClean
 
 set number " display line numbers by default
 set ruler " obsoleted by airline
