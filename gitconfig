@@ -40,13 +40,13 @@
 
 [color "diff"]
     meta = yellow
-    old = magenta
+    old = red
     new = green
 
 [color "status"]
     added = green
     changed = yellow
-    untracked = magenta
+    untracked = red
 
 [diff]
     tool = meld
