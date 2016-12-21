@@ -1,7 +1,7 @@
 # ~/.tmuxinator/huawei.yml
 
 name: huawei
-root: ~/stash/huawei-vrp/
+root: ~/stash/huawei-vrp/test/drned
 
 # Optional tmux socket
 # socket_name: foo
@@ -37,7 +37,9 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - vim -S
-        - cd test/drned; nenv; make stop start
-  - dotfiles: cd ~/stash/dotfiles
-  - misc: cd
+        - vim -S ../../Session.vim
+        - nenv; clear; make stop start
+  - dotfiles:
+      root: ~/stash/dotfiles
+  - misc:
+      root: ~/
