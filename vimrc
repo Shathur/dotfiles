@@ -13,7 +13,7 @@ packadd! matchit
 
 Plug 'airblade/vim-gitgutter' " display git changes in sign column
 Plug 'airblade/vim-rooter' " cd to project root
-Plug 'ap/vim-buftabline' " list buffers at top (I never use tabs anyway)
+Plug 'ap/vim-buftabline' " list buffers at top
 Plug 'AndrewRadev/linediff.vim' " diff lines in in the same file
 Plug 'AndrewRadev/splitjoin.vim' " switch between single and multi line statements
 Plug 'benmills/vimux' " call tmux from within vim
@@ -75,8 +75,8 @@ Plug 'xolox/vim-notes' " note taking with
 Plug 'Yggdroot/indentLine' " visual indent guides
 
 " disabled plugins
-" Plugin 'Chiel92/vim-autoformat' " probably not needed
-" Plugin 'ervandew/eclim' " would be great to have, but requires java 7 :(
+" Plug 'Chiel92/vim-autoformat' " probably not needed
+" Plug 'ervandew/eclim' " would be great to have, but requires java 7 :(
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -97,6 +97,7 @@ cabbrev PU PlugUpdate
 cabbrev PC PlugClean
 
 set number " display line numbers by default
+set relativenumber " use relative line numbers
 set ruler " obsoleted by airline
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab " always use spaces instead of tabs
 set autoindent smartindent " autoindent in new blocks, etc
@@ -109,7 +110,6 @@ set cursorline " highlight current line
 set backspace=indent,eol " backspace over indents and eol (but not start of insert)
 set showmatch matchtime=1 " jump to matching bracket for 0.1 s
 set tildeop " enable ~ operator (switch case)
-set lazyredraw " don't update screen unnecessarily
 set makeprg=make\ -C\ src " always use bare make as make program
 set splitright " open vertical split at the right side
 set undofile undodir=~/.vim/undo " use undofiles, put them here
@@ -257,6 +257,7 @@ map <leader>r :GitGutterUndoHunk<CR>
 map <leader>s :GitGutterStageHunk<CR>
 
 let g:gitgutter_max_signs = 2000 " (default: 500)
+let g:gitgutter_eager = 0
 
 " Follow symlinks when opening a file {{{
 
@@ -349,9 +350,6 @@ let g:Gitv_DoNotMapCtrlKey = 1
 
 vmap [s <Plug>(expand_region_shrink)
 vmap ]s <Plug>(expand_region_expand)
-
-" let g:quickfixsigns_classes = ['qfl', 'loc']
-" let g:quickfixsigns_class_cursor = {}
 
 let g:tagbar_show_linenumbers = 2
 let g:tagbar_type_yang = {
