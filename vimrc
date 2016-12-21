@@ -314,8 +314,8 @@ func! WordProcessorMode()
   nnoremap gk k
   nnoremap gj j
   setlocal spell spelllang=en,sv
-  set thesaurus+=/home/elnystro/mthesaur.txt
-  set thesaurus+=/home/elnystro/ordlista.txt
+  set thesaurus+=~/.vim/thesaurus/mthesaur.txt
+  " set thesaurus+=~/.vim/thesaurus/ordlista.txt
   set complete+=s
   set formatprg=par
   setlocal wrap
