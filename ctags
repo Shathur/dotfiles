@@ -16,4 +16,3 @@
 --regex-yang=/[ ^]grouping ([a-zA-Z0-9_-]+) *[{;]/\1/g,Groupings/
 --regex-yang=/[ ^]notification ([a-zA-Z0-9_-]+) *[{;]/\1/n,Notifications/
 --regex-yang=/[ ^]rpc ([a-zA-Z0-9_-]+) *[{;]/\1/r,RPCs/
---regex-yang=/[ ^]list ([a-zA-Z0-9_-]+) *[{;]/\1/l,Lists/

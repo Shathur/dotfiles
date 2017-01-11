@@ -365,7 +365,6 @@ let g:tagbar_type_yang = {
       \'g:Groupings',
       \'n:Notifications',
       \'r:RPCs',
-      \'l:Lists',
   \]
 \}
 
