@@ -112,6 +112,7 @@ export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
 export DEV_SUPPORT_HOME="/home/elnystro/dev-support"
 export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:/bin:$HOME/idea-IC-145.258.11/bin:/usr/local/java/jdk1.6.0_45/bin:/usr/local/java/jdk1.8.0_102/bin"
 export EDITOR="vim"
+export VISUAL=$EDITOR
 
 ncsrc() {
     echo "~/ncs-releases/$1/ncsrc"
