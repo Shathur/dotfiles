@@ -61,6 +61,7 @@ Plug 'tpope/vim-surround' " surround stuff, like ysiw(
 Plug 'tpope/vim-unimpaired' " some pair mappings, like [b [e [<Space> etc.
 Plug 'Valloric/ListToggle' " toggle open quickfix and location list w <ldr>q, <ldr>l
 Plug 'vim-airline/vim-airline-themes' " themes for airline
+Plug 'vim-scripts/CursorLineCurrentWindow' " use cursorline only in active window
 Plug 'vim-scripts/TaskList.vim' " toggle eclipse-like tasklist with <ldr>t
 Plug 'vim-utils/vim-g2' " get binary representation of a char with g2
 Plug 'vim-utils/vim-husk' " boost the command-line
