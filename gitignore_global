@@ -1,3 +1,7 @@
 tags
 Session.vim
 .idea/
+java.db
+java_cscope.files
+java_cscope.out
+java_tags

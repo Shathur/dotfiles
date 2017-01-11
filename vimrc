@@ -23,6 +23,7 @@ Plug 'bronson/vim-visual-star-search' " use * and # in visual selection
 Plug 'bruno-/vim-vertical-move' " move up and down without moving cursor, ]v and [v
 Plug 'chrisbra/vim-autoread' " real autoread functionality!
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy finder
+Plug 'devjoe/vim-codequery' " codequery integration
 Plug 'easymotion/vim-easymotion' " easy movement (but not sure how useful)
 Plug 'EinfachToll/DidYouMean' " handle ambiguous paths
 Plug 'gregsexton/gitv' " alternative to fugitive
@@ -43,6 +44,7 @@ Plug 'scrooloose/nerdtree' " file browser
 Plug 'Shathur/tailf.vim' " use for tailing commands
 Plug 'Shathur/yang.vim' " yang ft, forked for tailf
 Plug 'Shathur/YouCompleteMe' " completion engine, forked for tailf (not sure if it can be installed with vim-plug, though)
+Plug 'Shougo/unite.vim' " interface tools
 Plug 'SirVer/ultisnips' " snippets
 Plug 'szw/vim-maximizer' " toggle maximize window with F6
 Plug 'terryma/vim-expand-region' " expand/shrink visual selection with ]s and [s
@@ -398,3 +400,12 @@ let g:indentLine_enabled = 0
 map [oz :set wrapscan<cr>
 map ]oz :set nowrapscan<cr>
 map coz :set wrapscan!<cr>
+
+" Trigger db building (in current filetype) when your query fails
+let g:codequery_trigger_build_db_when_db_not_found = 1
+
+nnoremap <leader>: :CodeQueryMenu Unite Full<CR>
+nnoremap <leader>; :CodeQueryMenu Unite Magic<CR>
+
+" Or enable typing (to search menu items) by default
+nnoremap <leader>\ :CodeQueryMenu Unite Magic<CR>A
