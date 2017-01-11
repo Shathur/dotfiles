@@ -195,7 +195,7 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_extensions = ['quickfix']
 
 map <F9> :Gst<CR>
