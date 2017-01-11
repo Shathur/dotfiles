@@ -1,3 +1,6 @@
+if expand("%:e") == "trace"
+  setfiletype text
+endif
 if index(["", "text"], &filetype) > -1
   for line in getline(1, "$")
     if line == "!"
