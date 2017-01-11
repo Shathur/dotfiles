@@ -45,7 +45,7 @@ Plug 'Shathur/yang.vim' " yang ft, forked for tailf
 Plug 'Shathur/YouCompleteMe' " completion engine, forked for tailf (not sure if it can be installed with vim-plug, though)
 Plug 'SirVer/ultisnips' " snippets
 Plug 'szw/vim-maximizer' " toggle maximize window with F6
-Plug 'terryma/vim-expand-region' " expand/shrink visual selection with + and _
+Plug 'terryma/vim-expand-region' " expand/shrink visual selection with ]s and [s
 Plug 'terryma/vim-multiple-cursors' " edit many occurrences at the same time, ^N
 Plug 'tmux-plugins/vim-tmux' " ft for .tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events' " correct focus events when run in tmux
@@ -376,10 +376,12 @@ cabbrev R Reload
 
 let g:UltiSnipsExpandTrigger='<c-Space>'
 
+command! RemoveTrailingSpaces :%s/\s\+$//e
+cab RT RemoveTrailingSpaces
+
 cab mm Man
 cab vm Vman
 cab makE make
-cab RT RemoveTrailingSpaces
 cab GGPH GitGutterPreviewHunk
 cab HT HighlightTags
 
