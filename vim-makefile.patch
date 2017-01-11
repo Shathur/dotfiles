@@ -1,0 +1,42 @@
+[33mdiff --git a/src/Makefile b/src/Makefile[m
+[33mindex 7ae3fcbb2..3246fd1c2 100644[m
+[33m--- a/src/Makefile[m
+[33m+++ b/src/Makefile[m
+[36m@@ -445,16 +445,16 @@[m [mCClink = $(CC)[m
+ # dlopen(), dlsym(), dlclose(), i.e. pythonX.Y.so must be available[m
+ # However, this may still cause problems, such as "import termios" failing.[m
+ # Build two separate versions of Vim in that case.[m
+[31m-#CONF_OPT_PYTHON = --enable-pythoninterp[m
+[32m+[m[32mCONF_OPT_PYTHON = --enable-pythoninterp[m
+ #CONF_OPT_PYTHON = --enable-pythoninterp=dynamic[m
+[31m-#CONF_OPT_PYTHON3 = --enable-python3interp[m
+[32m+[m[32mCONF_OPT_PYTHON3 = --enable-python3interp[m
+ #CONF_OPT_PYTHON3 = --enable-python3interp=dynamic[m
+ [m
+ # RUBY[m
+ # Uncomment this when you want to include the Ruby interface.[m
+ # First one for static linking, second one for loading when used.[m
+ # Note: you need the development package (e.g., ruby1.9.1-dev on Ubuntu).[m
+[31m-#CONF_OPT_RUBY = --enable-rubyinterp[m
+[32m+[m[32mCONF_OPT_RUBY = --enable-rubyinterp[m
+ #CONF_OPT_RUBY = --enable-rubyinterp=dynamic[m
+ #CONF_OPT_RUBY = --enable-rubyinterp --with-ruby-command=ruby1.9.1[m
+ [m
+[36m@@ -467,7 +467,7 @@[m [mCClink = $(CC)[m
+ [m
+ # CSCOPE[m
+ # Uncomment this when you want to include the Cscope interface.[m
+[31m-#CONF_OPT_CSCOPE = --enable-cscope[m
+[32m+[m[32mCONF_OPT_CSCOPE = --enable-cscope[m
+ [m
+ # WORKSHOP - Sun Visual Workshop interface.  Only works with Motif![m
+ #CONF_OPT_WORKSHOP = --enable-workshop[m
+[36m@@ -527,7 +527,7 @@[m [mCClink = $(CC)[m
+ #CONF_OPT_FEAT = --with-features=small[m
+ #CONF_OPT_FEAT = --with-features=normal[m
+ #CONF_OPT_FEAT = --with-features=big[m
+[31m-#CONF_OPT_FEAT = --with-features=huge[m
+[32m+[m[32mCONF_OPT_FEAT = --with-features=huge[m
+ [m
+ # COMPILED BY - For including a specific e-mail address for ":version".[m
+ #CONF_OPT_COMPBY = "--with-compiledby=John Doe <JohnDoe@yahoo.com>"[m
