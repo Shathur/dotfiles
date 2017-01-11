@@ -118,7 +118,7 @@ set backupskip=/tmp/* " don't backup at this path
 set backupdir=~/.vim/backups " put backups here
 set noswapfile " don't use swap files
 set wildmenu " use completion in cli
-set wildignore+=.git,bin,netsim,load-dir,test/drned/drned-ncs
+set wildignore+=.git,bin,load-dir,test/drned/drned-ncs,undo,ncsc-out
 set textwidth=160 " use the modified t-clone textwidth
 set foldnestmax=3 " folds shouldn't be nested too much
 set foldminlines=5 " no use folding less lines than this
@@ -197,7 +197,6 @@ nmap <C-L> <C-W>l
 
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_extensions = ['quickfix']
-let g:ctrlp_custom_ignore = '\v/(bin|build)$'
 
 map <F9> :Gst<CR>
 
