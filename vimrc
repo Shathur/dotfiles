@@ -392,3 +392,7 @@ nnoremap <F7> :UndotreeToggle<cr>
 
 " show indent guides with :IdentLinesToggle
 let g:indentLine_enabled = 0
+
+map [oz :set wrapscan<cr>
+map ]oz :set nowrapscan<cr>
+map coz :set wrapscan!<cr>
