@@ -173,6 +173,8 @@ nmap <leader>9 :buffer 9<CR>
 map <leader>n :NERDTreeTabsToggle<CR>
 map <F2> :e $MYVIMRC<CR>
 
+nnoremap <C-H> :update<CR>
+
 " replace word under cursor
 nnoremap <Leader>R :%s/\<<C-r><C-w>\>/
 
@@ -190,8 +192,6 @@ nmap <F8> :TagbarToggle<CR>
 
 " disable Ex mode
 nnoremap Q <nop>
-
-nnoremap <leader>u :update<CR>
 
 
 let g:ctrlp_working_path_mode = '0'
