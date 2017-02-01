@@ -47,7 +47,7 @@ Plug 'Shathur/YouCompleteMe' " completion engine, forked for tailf (not sure if 
 Plug 'Shougo/unite.vim' " interface tools
 Plug 'SirVer/ultisnips' " snippets
 Plug 'szw/vim-maximizer' " toggle maximize window with F6
-Plug 'terryma/vim-expand-region' " expand/shrink visual selection with ]s and [s
+Plug 'terryma/vim-expand-region' " expand/shrink visual selection with + and -
 Plug 'terryma/vim-multiple-cursors' " edit many occurrences at the same time, ^N
 Plug 'tmux-plugins/vim-tmux' " ft for .tmux.conf
 Plug 'tmux-plugins/vim-tmux-focus-events' " correct focus events when run in tmux
@@ -351,8 +351,6 @@ let g:Gitv_WrapLines = 0
 let g:Gitv_OpenPreviewOnLaunch = 0
 let g:Gitv_DoNotMapCtrlKey = 1
 
-vmap [s <Plug>(expand_region_shrink)
-vmap ]s <Plug>(expand_region_expand)
 
 let g:tagbar_show_linenumbers = 2
 let g:tagbar_type_yang = {
