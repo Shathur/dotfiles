@@ -128,6 +128,7 @@ set foldminlines=5 " no use folding less lines than this
 set nofoldenable " don't fold by default
 set history=10000 " remember the last 1000 commands
 set scrolloff=5 " number of lines to keep between cursor and edge
+set timeoutlen=250
 
 syntax on
 autocmd FileType yang setlocal shiftwidth=2 tabstop=2 commentstring=//%s
