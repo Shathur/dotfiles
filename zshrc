@@ -1,11 +1,11 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/elnystro/.oh-my-zsh
+  export ZSH=/home/elias/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="elias"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -43,7 +43,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=/home/elnystro/stash/dotfiles/zsh-custom/
+ZSH_CUSTOM=/home/elias/stash/dotfiles/zsh-custom/
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -105,19 +105,20 @@ DEFAULT_USER=elnystro
 
 export TERM=xterm-256color
 
-source ~/ncs-releases/4.3/ncsrc
-export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
-# export JAVA_HOME="/usr/local/java/jdk1.8.0_102"
+# source ~/ncs-releases/4.3/ncsrc
+# export JAVA_HOME="/usr/local/java/jdk1.6.0_45"
+export JAVA_HOME="/usr/local/java/jdk1.8.0_102"
 
 export DEV_SUPPORT_HOME="/home/elnystro/dev-support"
-export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:/bin:$HOME/idea-IC-145.258.11/bin:/usr/local/java/jdk1.6.0_45/bin:/usr/local/java/jdk1.8.0_102/bin"
+# export PATH="$PATH:/usr/bin/ctags:$DEV_SUPPORT_HOME/bin:/bin:$HOME/idea-IC-145.258.11/bin:/usr/local/java/jdk1.6.0_45/bin:/usr/local/java/jdk1.8.0_102/bin"
+export PATH="$PATH:/usr/bin/ctags:/bin:/usr/local/java/jdk1.8.0_102/bin"
 export EDITOR="vim"
 export VISUAL=$EDITOR
 
-ncsrc() {
-    echo "~/ncs-releases/$1/ncsrc"
-    source ~/ncs-releases/$1/ncsrc
-}
+# ncsrc() {
+    # echo "~/ncs-releases/$1/ncsrc"
+    # source ~/ncs-releases/$1/ncsrc
+# }
 
 TMOUT=1
 
@@ -172,4 +173,4 @@ alias cbwd="pwd | cb"
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 
 # tmuxinator completion
-source ~/.bin/tmuxinator.zsh
+# source ~/.bin/tmuxinator.zsh
