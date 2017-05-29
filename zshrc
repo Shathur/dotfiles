@@ -5,7 +5,7 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="avit2"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -100,6 +100,7 @@ alias sudo='sudo -E'
 alias rm='rm -i'
 alias mv='mv -i'
 alias tailf='tail -f'
+alias vim='nvim'
 
 DEFAULT_USER=elnystro
 
