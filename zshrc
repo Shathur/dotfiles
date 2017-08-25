@@ -175,3 +175,7 @@ alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 
 # tmuxinator completion
 # source ~/.bin/tmuxinator.zsh
+#
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
